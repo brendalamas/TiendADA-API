@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tiendADA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="./tiendADA.jpeg" alt="tiendADA">
+        <div>
+            <h1>TiendADA</h1>
+            <p>proyecto usando API</p>
+        </div>
+    </header>
+    <section id="section-busqueda">
+        <form id="form-busqueda"> 
+            <input type="text" id="input-busqueda" placeholder="Buscar productos, marcas y más">
+            <img id="lupa" src="./lupa.png" alt="lupa">
+        </form>
+        <div id="contenedor-orden">
+            <label>Condicion</label>
+            <select id="select-orden"> 
+                <option value="nuevo">Nuevo</option>
+                <option value="usado">Usado</option>
+            </select>
+        </div>
+        
+    </section>
+    <!-- <img id="precarga" src="./Magnify-1s-200px.svg" alt=""> -->
+    <div id="contenedor-tarjetas">
+        <section id="section-tarjetas"></section>
+    </div>
+    <section id="section-detalle"></section>
+
+
+
+
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
