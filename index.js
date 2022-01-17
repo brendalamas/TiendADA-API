@@ -5,16 +5,18 @@ const sectionTarjetas = document.querySelector("#section-tarjetas")
 const sectionBusqueda = document.querySelector("#section-busqueda")
 const sectionDetalle = document.querySelector("#section-detalle")
 const selectUbicacion = document.querySelector("#select-ubicacion")
+const selectEnvios = document.querySelector("#select-envios")
+const selectCondicion = document.querySelector("#select-condicion")
 
 
 //FETCH
-const buscarProductos = (producto,direccion) =>{
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&state=${direccion}`)
+const buscarProductos = (producto,direccion, envios,condicion) =>{
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`)
     .then(res => res.json())
     .then(data =>{
         console.log(data);
-        mostrarTarjetas(data.results, data.available_filters.state)
-        console.log(data.available_filters.state);
+        mostrarTarjetas(data.results, direccion, envios,condicion)
+        console.log(condicion);
     })
 }
 
@@ -29,10 +31,10 @@ const verProducto = (id)=>{
 
 form.onsubmit=(e)=>{
     e.preventDefault()
-    buscarProductos(inputBusqueda.value, selectUbicacion.value)
+    buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
 }
 
-const mostrarTarjetas = (producto, direccion) =>{
+const mostrarTarjetas = (producto, direccion, envios, condicion) =>{
     sectionTarjetas.style.display = "flex"
     sectionTarjetas.innerHTML= producto.reduce((acc, curr)=>{
         return acc + `
@@ -91,15 +93,7 @@ const mostrarEnvioGratis = (tipoEnvio)=>{
     if (tipoEnvio === true) {
         return "Envio Gratuito"
     }else{
-        return "Envio normal"
+        return "Envio a cargo del comprador"
     }
 }
 
-
-// const next = document.querySelector("#next")
-// let paginaActual = 1
-
-// next.onclick=()=>{
-//     paginaActual ++
-//     buscarProductos()
-// }
