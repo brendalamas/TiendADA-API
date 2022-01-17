@@ -5,6 +5,11 @@ const sectionTarjetas = document.querySelector("#section-tarjetas")
 const sectionBusqueda = document.querySelector("#section-busqueda")
 const sectionDetalle = document.querySelector("#section-detalle")
 
+const filtrarCondicion = (data) =>{
+    if (data.condition === "new") {
+        console.log("es nuevo");
+    }
+}
 
 const buscarProductos = (producto) =>{
     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}`)
@@ -85,11 +90,6 @@ const detalleTarjeta = (data)=>{
 const selectOrden = document.querySelector("#select-orden")
 selectOrden.onchange=()=>{
     buscarProductos()
-}
-const filtrarCondicion = (data) =>{
-    if (data.condition === "new") {
-        console.log("es nuevo");
-    }
 }
 
 
