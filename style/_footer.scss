@@ -1,0 +1,32 @@
+footer{
+    @include flex($direction: column, $justify:center, $align:center);
+    background-color: $colorTextoPrincipal;
+    color: $fondoSecundario;
+    font-family: $tipografiaPrincipal;
+    font-size: $tamanioTextoPagina;
+    bottom: 0; 
+    margin-top: $margin;
+    padding: $padding;
+}
+.icon-user{
+    color: $fondoSecundario;
+}
+#contactame{
+    h3{
+        @include flex($direction: column, $justify:center, $align:center);
+        margin-bottom: $marginmx;
+        font-weight: 900;
+        font-size: $tamanioTextoPagina;
+
+    }
+}
+a:link{
+    text-decoration:none;
+}
+#contenedor-icons{
+    @include flex($direction: row, $justify:center, $align:center);
+    margin-bottom: $marginmx;
+}
+.icons{
+    margin-left: $marginmx;
+}

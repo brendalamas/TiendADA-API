@@ -1,0 +1,38 @@
+#contenedor-flex{
+    @include flex($direction: row, $justify:flex-start, $align:flex-start);
+    margin-top: $margin;
+    width: 100%;
+}
+#contenedor-filtros{
+    @include flexSinAlign;
+    margin-left: $marginmx;
+    width: 20%;
+
+}
+#imagen-principal{
+    @include flex($direction: column, $justify:center, $align:center);
+    margin-left: $marginLeft;
+}
+#text-filtros{
+    font-family: $tipografiaPrincipal;
+    font-weight: 900;
+    font-size: $tamanioTextoPaginaGde;
+    color: $colorTextoPrincipal;
+}
+label{
+    font-family: $tipografiaPrincipal;
+    color: $fondoSecundario;
+    margin-top: $marginmx ;
+    font-size: $tamanioTextoPagina;
+
+}
+input, select{
+    font-family: $tipografiaPrincipal;
+    color: $fondoSecundario;
+    border: none;
+    border-radius: $borderRadius;
+    padding: 7px;
+    font-size: $tamanioTextoPagina;
+    margin-top: $margin;
+
+}

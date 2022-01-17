@@ -1,0 +1,13 @@
+#lupa{
+    width: 1.3em;
+    margin-left: 15px;
+}
+#form-busqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: $marginLeft;
+}
+input{
+    width: 50%;
+}
