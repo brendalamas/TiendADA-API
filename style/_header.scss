@@ -1,15 +1,18 @@
 header{
-    display: flex;
-    justify-content: start;
-    align-items: center;    
-    img{
+    @include flex($direction: row, $justify:flex-start, $align:center);
+    margin-top: $marginmx;
+    #imagen-icono{
         width: 17%;
+        @include flex($direction: row, $justify:flex-start, $align:center);
+        display: none;
+    }
+    #imagen-icono-reemplazo{
+        width: 17%;
+        @include flex($direction: row, $justify:flex-start, $align:center);
     }
     div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 30%;
+        margin-left: $marginLeft;
+        @include flex($direction: column, $justify:center, $align:center);
     }
     div h1{
         color: $colorTextoPrincipal;
@@ -19,7 +22,7 @@ header{
         margin: 0px;
     }
     div p{
-        color: $colorTextoSecundario;
+        color: $fondoSecundario;
         font-size:$tamanioTextoSecundario;
         font-family: $tipografiaPrincipal;
         font-weight: 700;

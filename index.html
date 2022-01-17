@@ -5,23 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tiendADA</title>
+    <link rel="icon" href="./imagenes/lupa.ico">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/35cd8eb970.js" crossorigin="anonymous">
+    </script>
 </head>
 <body>
+    <!-- HEADER -->
     <header>
-        <img src="./tiendADA.jpeg" alt="tiendADA">
+        <img id="imagen-icono-reemplazo" src="./imagenes/imgReemplazo.jpeg" alt="tiendADA">
+        <img id="imagen-icono" src="./imagenes/tiendADA.jpeg" alt="tiendADA">
         <div>
             <h1>TiendADA</h1>
-            <p>proyecto usando API</p>
+            <p>Proyecto realizado en el curso de ADA utilizando la API de Mercado Libre</p>
         </div>
     </header>
+
+    <!-- SECCION BUSQUEDA -->
     <section id="section-busqueda">
         <form id="form-busqueda"> 
-            <input type="text" id="input-busqueda" placeholder="Buscar productos, marcas y más">
-            <img id="lupa" src="./lupa.png" alt="lupa">
+            <input type="text" id="input-busqueda" placeholder=" Buscar productos">
+            <img id="lupa" src="./imagenes/lupa.png" alt="lupa">
         </form>
+    </section>
+    
+    <!-- SECCION PRINCIPAL/ INCLUYE FILTROS Y TARJETAS -->
+    <div id="contenedor-flex">
+        <!-- CONTENEDOR FILTROS -->
         <div id="contenedor-filtros">
-            <label>Ubicacion</label>
+            <h2 id="text-filtros">SELECCIONA LOS FILTROS DE ACUERDO A TU BÚSQUEDA!</h2>
+            <label>UBICACIÓN</label>
             <select id="select-ubicacion"> 
                 <option value="TUxBUENBUGw3M2E1">Capital Federal</option>
                 <option value="TUxBUEdSQXJlMDNm">Bs As GBA Sur</option>
@@ -38,35 +51,59 @@
                 <option value="TUxBUFNBTmU5Nzk2">Santa Fe</option>
                 <option value="TUxBUENPUmFkZGIw">Cordoba</option>
             </select>
-
-            <label>Envio</label>
+    
+            <label>ENVÍO</label>
             <select id="select-envios">
                 <option value="mercadoenvios">Mercado Envios</option>
                 <option value="fulfillment">Envio FULL</option>
             </select>
-
-            <label>Condicion</label>
+    
+            <label>CONDICIÓN</label>
             <select id="select-condicion">
                 <option value="2230284">Nuevo</option>
                 <option value="2230581">Usado</option>
             </select>
             
         </div>
+        <!-- <img id="precarga" src="./Magnify-1s-200px.svg" alt="">-->
+
+        <!-- CONTENEDOR IMAGEN PRINCIPAL -->
+        <div id="imagen-principal">
+            <img src="./imagenes/tiendADA.jpeg" alt="imagen de tiendADA">
+        </div>
+
+        <!-- CONTENEDOR TARJETAS -->
+        <div id="contenedor-tarjetas"></div>
         
-    </section>
-    <!-- <img id="precarga" src="./Magnify-1s-200px.svg" alt=""> -->
-    <div id="contenedor-tarjetas">
-        <section id="section-tarjetas">
-        
-        </section>
+        <!-- SECCION DETALLE -->
+        <section id="section-detalle"></section>
+
     </div>
-    <section id="section-detalle"></section>
-
-
-
-
-
-
+    
+    <!-- FOOTER -->
+    <footer>
+        <div id="contactame">
+            <h3>¡CONTACTAME!</h3>
+            <div id="contenedor-icons">
+                <div class="icons">
+                    <a href="https://github.com/brendalamas" target="blanck" class="icon-user">
+                        <i class="fab fa-github-alt icon-radius"></i> Linkedin
+                    </a>
+                </div>
+                <div class="icons">
+                    <a href="https://www.linkedin.com/in/brenda-lamas/" target="blanck" class="icon-user">
+                        <i class="fab fa-linkedin-in icon-radius"></i> GitHub
+                    </a>
+                </div>
+                <div class="icons">
+                    <a href="https://mail.google.com/" target="blanck" class="icon-user">
+                        <i class="fas fa-envelope icon-radius"></i> Gmail
+                    </a>
+                </div>               
+            </div>
+        </div>
+        <p>Hecho con ❤️ por Brenda</p>
+    </footer>
     <script src="./index.js"></script>
 </body>
 </html>
