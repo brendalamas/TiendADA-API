@@ -8,6 +8,11 @@ const selectUbicacion = document.querySelector("#select-ubicacion")
 const selectEnvios = document.querySelector("#select-envios")
 const selectCondicion = document.querySelector("#select-condicion")
 
+const filtrarCondicion = (data) =>{
+    if (data.condition === "new") {
+        console.log("es nuevo");
+    }
+}
 
 //FETCH
 const buscarProductos = (producto,direccion, envios,condicion) =>{
@@ -89,11 +94,22 @@ const detalleTarjeta = (data)=>{
     }
 
 }
-const mostrarEnvioGratis = (tipoEnvio)=>{
-    if (tipoEnvio === true) {
-        return "Envio Gratuito"
-    }else{
-        return "Envio a cargo del comprador"
-    }
-}
+// <<<<<<< sass
+
+// // FILTRAR POR CONDICION
+
+// // si la condicion es nuevo --> mostrame estos
+// // si la condicion es no es nuevo --> mostrame el resto
+// const selectOrden = document.querySelector("#select-orden")
+// selectOrden.onchange=()=>{
+//     buscarProductos()
+// =======
+// const mostrarEnvioGratis = (tipoEnvio)=>{
+//     if (tipoEnvio === true) {
+//         return "Envio Gratuito"
+//     }else{
+//         return "Envio a cargo del comprador"
+//     }
+// >>>>>>> main
+// }
 
