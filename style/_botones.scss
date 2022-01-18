@@ -1,15 +1,16 @@
 button{
     color: $fondoSecundario;
+    border: 0;
     border-color: $fondoPrincipal;
     border-radius: $borderRadius;
-    padding: $padding;
+    padding: $paddingmin;
     font-size: $tamanioTextoPagina;
     background-color: $colorTextoPrincipal;
     font-family: $tipografiaPrincipal;
 }
 button:hover{
     background-color: $fondoPrincipal;
-    border: none;
+    border: 0;
 }
 #contenedor-botones{
     @include flex($direction: row, $justify:center, $align:center);
@@ -17,4 +18,11 @@ button:hover{
 }
 .boton-atras{
     margin-top: $marginMIN;
+}
+.boton-comprar{
+    background-color: green;
+    font-size: $tamanioTextoPagina;
+    color: $colorTextoPrincipal;
+    margin-top: $marginMIN;
+    padding: $paddingmin;
 }

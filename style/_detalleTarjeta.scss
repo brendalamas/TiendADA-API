@@ -6,41 +6,45 @@
 #section-detalle{
     background-color: $colorTextoPrincipal;
     border-radius: $borderRadius;
-    // margin-left: $marginMAX;
+    width: 700px;
     justify-content: center;
-    padding: $padding;
+    padding: $marginMIN;
     font-family: $tipografiaPrincipal;
     color: $fondoSecundario;
     font-size: $tamanioTextoPaginaGde;
+    display: none;
 }
 .detalle-producto{
-    @include flex($direction: column, $justify:center, $align:center);
-}
-.detalle-flex{
-    @include flex($direction: row, $justify:center, $align:center);
+    @include flexSinAlign;
     h2{
         font-weight: 900;
         text-align: center;
     }
+}
+.detalle-flex{
+    @include flex($direction: row, $justify:space-between, $align:center);
+    margin-top: $padding;
     .detalle-img{
-        width: 55%;
-        margin-top: $marginMIN;
+        width: 30%;
     }
 }
 .flex-column{
-    @include flex($direction: column, $justify:center, $align:center);
+    @include flexSinAlign;
+    margin-left: $marginMIN;
+    p{
+        margin-bottom: $paddingmin;
+    }
     .detalle-precio{
         font-weight: 800;
     }
 }
 .img-detalle-flex{
-    @include flex($direction: row, $justify:center, $align:center);
-    .img-detalle{
-        width: 5%;
-    }
+    @include flex($direction: row, $justify:flex-start, $align:center);
+    
 }
 .detalle-contenedor-img{
     @include flex($direction: row, $justify:center, $align:center);
+    margin-top: $marginMIN;
     .detalle-otras-img{
         width: 5%;
     }

@@ -1,6 +1,6 @@
 #contenedor-tarjetas{
     @include flex($direction: column, $justify:center, $align:center);
-    width: 80%;
+    width: 100%;
     display: none;
 }
 #section-tarjetas{
