@@ -2,21 +2,21 @@
 const form = document.querySelector("#form-busqueda")
 const inputBusqueda = document.querySelector("#input-busqueda")
 const contenedorTarjeta = document.querySelector("#contenedor-tarjetas")
+const contenedorDetalle = document.querySelector("#contenedor-detalle")
+
 const sectionTarjetas = document.querySelector("#section-tarjetas")
 const sectionBusqueda = document.querySelector("#section-busqueda")
 const sectionDetalle = document.querySelector("#section-detalle")
 const selectUbicacion = document.querySelector("#select-ubicacion")
 const selectEnvios = document.querySelector("#select-envios")
 const selectCondicion = document.querySelector("#select-condicion")
-const imagenPrincipal = document.querySelector("#imagen-principal")
-const imagenIcono = document.querySelector("#imagen-icono")
-const imagenIconoReemplazo = document.querySelector("#imagen-icono-reemplazo")
 
-const filtrarCondicion = (data) =>{
-    if (data.condition === "new") {
-        console.log("es nuevo");
-    }
-}
+
+// const filtrarCondicion = (data) =>{
+//     if (data.condition === "new") {
+//         console.log("es nuevo");
+//     }
+// }
 
 //FETCH
 const buscarProductos = (producto,direccion, envios,condicion) =>{
@@ -46,9 +46,7 @@ form.onsubmit=(e)=>{
 // tarjetas en HTML
 const mostrarTarjetas = (producto, direccion, envios, condicion) =>{
     contenedorTarjeta.style.display = "flex"
-    imagenPrincipal.style.display = "none"
-    imagenIcono.style.display="flex"
-    imagenIconoReemplazo.style.display="none"
+    contenedorDetalle.style.display= "none"
 
     contenedorTarjeta.innerHTML= producto.reduce((acc, curr)=>{
         return acc + `
@@ -64,8 +62,11 @@ const mostrarTarjetas = (producto, direccion, envios, condicion) =>{
             </div>
         </section>
         `
-    },`<button id="prev">Pagina Anterior</button>
-    <button id="next">Pagina Siguiente</button>`)
+    },`
+    <div id="contenedor-botones">
+        <button id="prev">Pagina Anterior</button>
+        <button id="next">Pagina Siguiente</button>
+    </div>`)
     clickATarjetas()
 
 }
@@ -84,32 +85,73 @@ const clickATarjetas = () =>{
 ////// TARJETAS EN DETALLE
 const detalleTarjeta = (data)=>{
     contenedorTarjeta.style.display = "none"
-    sectionDetalle.style.display = "flex"
+    contenedorDetalle.style.display = "flex"
     console.log(data);
     sectionDetalle.innerHTML = `
     <article class="detalle-producto">
         <h2>${data.title}</h2>
-        <img src="${data.thumbnail}">
-        <p>$${data.base_price}</p>
-        <p>${mostrarEnvioGratis(data.shipping.free_shipping)}</p>
-    </article>
-    <button class="boton-atras" id="${data.id}">Atrás</button>`
+        <div class="detalle-flex">
+            <img class="detalle-img" src="${data.thumbnail}">
+            <div class="flex-column">
+                <p>${mostrarCondicion(data.condition)}</p> 
+                <p class="detalle-precio">$${data.base_price}</p>
+                <p>Cantidad: ${mostrarStock(data.initial_quantity, data.sold_quantity)}</p>
+                <p>${mostrarEnvioGratis(data.shipping.free_shipping)}</p>
+                <p>${data.warranty}</p>
+                <p>${data.descriptions}</p>
+            </div>
+            
+        </div>
+        <div class="detalle-contenedor-img">
+            <img class="detalle-otras-img" src="${data.pictures[0].secure_url}">
+            <img class="detalle-otras-img" src="${data.pictures[1].secure_url}">
+            <img class="detalle-otras-img" src="${data.pictures[2].secure_url}">
+        </div>
+        
+
+        <button class="boton-atras" id="${data.id}">Atrás</button>
+    </article>`
 
     const botonAtras = document.querySelector(".boton-atras")
 
     botonAtras.onclick = () => {
-        sectionDetalle.style.display="none"
+        contenedorDetalle.style.display="none"
         contenedorTarjeta.style.display="flex"
-        console.log("click");
     }
 
 }
-// FUNCION ENVIO GRATIS
+// FUNCIONES
 const mostrarEnvioGratis = (tipoEnvio)=>{
     if (tipoEnvio === true) {
-        return "Envio Gratuito"
+        return `
+        <div class="img-detalle-flex">
+            <img class="img-detalle" src="./imagenes/camion-full.png">
+            <p class='envio-gratis'> Envio FULL / Envio gratis</p>
+        </div>
+        
+        `
     }else{
-        return "Envio a cargo del comprador"
+        return `
+        <div class="img-detalle-flex">
+            <img class="img-detalle" src="./imagenes/camion-normal.png">
+            <p class='envio-gratis'> Envio a cargo del comprador</p>
+        </div>
+        ` 
+    }
+}
+
+const mostrarCondicion = (tipoCondicion)=>{
+    if (tipoCondicion === "new") {
+        return "Nuevo"
+    }else{
+        return "Usado"
+    }
+}
+const mostrarStock = (stockInicial, stockFinal)=>{
+    if ((stockInicial - stockFinal) > 0 ) {
+        return `${(stockInicial - stockFinal)} productos en stock`
+    }else{
+        return "No hay stock disponible :("
     }
 }
 

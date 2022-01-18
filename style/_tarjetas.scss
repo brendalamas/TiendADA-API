@@ -1,8 +1,3 @@
-#imagen-principal{
-    img{
-        @include flex($direction: column, $justify:center, $align:center);
-    }
-}
 #contenedor-tarjetas{
     @include flex($direction: column, $justify:center, $align:center);
     width: 80%;
@@ -15,26 +10,22 @@
     box-shadow: $boxShadow;
     border-radius: $borderRadius;
     background-color:$colorTextoPrincipal ;
-    margin-top: $marginmx;
-    // padding: $padding;
+    margin-bottom: $marginMIN;
+    padding: 0.5rem;
 }
 
 .tarjetas{
     @include flex($direction: row, $justify: flex-start, $align:center);
     width: 95%;
     background-color:$colorTextoPrincipal;
-    padding: 0.5rem;
     font-family: $tipografiaPrincipal;
-    margin-top: 5px;
     border: 2px $fondoPrincipal;
 }
 .img-tarjeta{
     width: 15%;
 }
 .text-tarjetas{
-    margin-left: $margin ;
+    margin-left: $marginMIN ;
     font-family: $tipografiaPrincipal;
 }
-#section-detalle{
-    @include flex($direction: row, $justify:center, $align:center);
-}
+

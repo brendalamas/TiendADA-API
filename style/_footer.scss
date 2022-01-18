@@ -5,8 +5,9 @@ footer{
     font-family: $tipografiaPrincipal;
     font-size: $tamanioTextoPagina;
     bottom: 0; 
-    margin-top: $margin;
+    margin-top: $marginMIN;
     padding: $padding;
+    border-radius: $borderRadius;
 }
 .icon-user{
     color: $fondoSecundario;
@@ -14,7 +15,7 @@ footer{
 #contactame{
     h3{
         @include flex($direction: column, $justify:center, $align:center);
-        margin-bottom: $marginmx;
+        margin-bottom: $marginMIN;
         font-weight: 900;
         font-size: $tamanioTextoPagina;
 
@@ -23,10 +24,16 @@ footer{
 a:link{
     text-decoration:none;
 }
+a:hover{
+    background-color: $fondoPrincipal;
+    border: none;
+    padding: $paddingmin;
+    border-radius: $borderRadius;
+}
 #contenedor-icons{
     @include flex($direction: row, $justify:center, $align:center);
-    margin-bottom: $marginmx;
+    margin-bottom: $marginMIN;
 }
 .icons{
-    margin-left: $marginmx;
+    margin-left: $marginMIN;
 }
