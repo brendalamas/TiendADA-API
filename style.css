@@ -16,7 +16,7 @@ header {
   align-items: center;
 }
 header img {
-  width: 55%;
+  width: 40%;
 }
 header img:hover {
   transform: scale(1.15);
@@ -28,6 +28,7 @@ header img:hover {
   justify-content: flex-start;
   margin-top: 55px;
   width: 100vw;
+  padding: 20px;
 }
 
 #contenedor-tarjetas {
@@ -35,7 +36,7 @@ header img:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
   display: none;
 }
 
@@ -77,7 +78,6 @@ header img:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 55px;
   width: 20%;
   padding: 20px;
   background-color: #ffffff;
@@ -200,40 +200,44 @@ input {
 #section-detalle {
   background-color: #ffffff;
   border-radius: 30px;
+  width: 700px;
   justify-content: center;
-  padding: 20px;
+  padding: 35px;
   font-family: "Josefin Sans", sans-serif;
   color: #E6A715;
   font-size: 20px;
+  display: none;
 }
 
 .detalle-producto {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+}
+.detalle-producto h2 {
+  font-weight: 900;
+  text-align: center;
 }
 
 .detalle-flex {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-.detalle-flex h2 {
-  font-weight: 900;
-  text-align: center;
+  margin-top: 20px;
 }
 .detalle-flex .detalle-img {
-  width: 55%;
-  margin-top: 35px;
+  width: 30%;
 }
 
 .flex-column {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  margin-left: 35px;
+}
+.flex-column p {
+  margin-bottom: 7px;
 }
 .flex-column .detalle-precio {
   font-weight: 800;
@@ -242,11 +246,8 @@ input {
 .img-detalle-flex {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-}
-.img-detalle-flex .img-detalle {
-  width: 5%;
 }
 
 .detalle-contenedor-img {
@@ -254,6 +255,7 @@ input {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 35px;
 }
 .detalle-contenedor-img .detalle-otras-img {
   width: 5%;
@@ -264,9 +266,10 @@ input {
 
 button {
   color: #E6A715;
+  border: 0;
   border-color: #FEDD58;
   border-radius: 30px;
-  padding: 20px;
+  padding: 7px;
   font-size: 18px;
   background-color: #ffffff;
   font-family: "Josefin Sans", sans-serif;
@@ -274,7 +277,7 @@ button {
 
 button:hover {
   background-color: #FEDD58;
-  border: none;
+  border: 0;
 }
 
 #contenedor-botones {
@@ -287,6 +290,53 @@ button:hover {
 
 .boton-atras {
   margin-top: 35px;
+}
+
+.boton-comprar {
+  background-color: green;
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 35px;
+  padding: 7px;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  background-color: #111111bd;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.modal .fa-exclamation-triangle {
+  color: #FEDD58;
+  font-size: 65px;
+  margin-bottom: 35px;
+}
+.modal p {
+  margin-bottom: 35px;
+  text-align: center;
+  color: #E6A715;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 30px;
+  padding: 20px;
 }
 
 body {

@@ -12,6 +12,7 @@ const selectEnvios = document.querySelector("#select-envios")
 const selectCondicion = document.querySelector("#select-condicion")
 
 
+
 // const filtrarCondicion = (data) =>{
 //     if (data.condition === "new") {
 //         console.log("es nuevo");
@@ -43,7 +44,7 @@ form.onsubmit=(e)=>{
     buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
 }
 
-// tarjetas en HTML
+// TARJETAS EN HTML
 const mostrarTarjetas = (producto, direccion, envios, condicion) =>{
     contenedorTarjeta.style.display = "flex"
     contenedorDetalle.style.display= "none"
@@ -86,6 +87,8 @@ const clickATarjetas = () =>{
 const detalleTarjeta = (data)=>{
     contenedorTarjeta.style.display = "none"
     contenedorDetalle.style.display = "flex"
+    sectionDetalle.style.display = "flex"
+
     console.log(data);
     sectionDetalle.innerHTML = `
     <article class="detalle-producto">
@@ -95,10 +98,11 @@ const detalleTarjeta = (data)=>{
             <div class="flex-column">
                 <p>${mostrarCondicion(data.condition)}</p> 
                 <p class="detalle-precio">$${data.base_price}</p>
+                <p>Vendido por ${data.domain_id}</p>
                 <p>Cantidad: ${mostrarStock(data.initial_quantity, data.sold_quantity)}</p>
                 <p>${mostrarEnvioGratis(data.shipping.free_shipping)}</p>
                 <p>${data.warranty}</p>
-                <p>${data.descriptions}</p>
+                <button class="boton-comprar">COMPRAR</button>
             </div>
             
         </div>
@@ -111,29 +115,35 @@ const detalleTarjeta = (data)=>{
 
         <button class="boton-atras" id="${data.id}">Atrás</button>
     </article>`
-
+    const botonComprar = document.querySelector(".boton-comprar")
     const botonAtras = document.querySelector(".boton-atras")
 
     botonAtras.onclick = () => {
         contenedorDetalle.style.display="none"
         contenedorTarjeta.style.display="flex"
     }
-
+    
+    botonComprar.onclick=()=>{
+        const modal = document.querySelector(".modal")
+        modal.style.display="flex"
+        mostrarImagenNotFound ()
+    }
 }
+
 // FUNCIONES
 const mostrarEnvioGratis = (tipoEnvio)=>{
     if (tipoEnvio === true) {
         return `
         <div class="img-detalle-flex">
-            <img class="img-detalle" src="./imagenes/camion-full.png">
-            <p class='envio-gratis'> Envio FULL / Envio gratis</p>
+            <i class="fas fa-truck"></i>
+            <p class='envio-gratis'> Envio FULL</p>
         </div>
         
         `
     }else{
         return `
         <div class="img-detalle-flex">
-            <img class="img-detalle" src="./imagenes/camion-normal.png">
+            <i class="fas fa-truck"></i>
             <p class='envio-gratis'> Envio a cargo del comprador</p>
         </div>
         ` 
@@ -142,9 +152,15 @@ const mostrarEnvioGratis = (tipoEnvio)=>{
 
 const mostrarCondicion = (tipoCondicion)=>{
     if (tipoCondicion === "new") {
-        return "Nuevo"
+        return `
+        <p>Este producto es nuevo! 
+            <span><i class="far fa-smile-beam"></i></span>
+        </p>`
     }else{
-        return "Usado"
+        return `
+        <p>Este producto es usado 
+            <span><i class="fas fa-recycle"></i></span>
+        </p>`
     }
 }
 const mostrarStock = (stockInicial, stockFinal)=>{
@@ -155,3 +171,23 @@ const mostrarStock = (stockInicial, stockFinal)=>{
     }
 }
 
+const mostrarImagenNotFound=()=>{
+    const modal = document.querySelector(".modal")
+
+    modal.innerHTML= `
+    <div class="modal-container">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Esta pagina es parte de un proyecto utilizando la API de mercado libre, para poder comprar por la misma redirigite al siguiente 
+            <span>    
+                <a href="https://www.mercadolibre.com/" target="blanck">link</a>
+            </span>
+        </p>
+        <button class="cerrar-modal">Cerrar</button>
+    </div>
+    
+    `
+    const cerrarModal = document.querySelector(".cerrar-modal")
+    cerrarModal.onclick=()=>{
+        modal.style.display="none"
+    }
+}
