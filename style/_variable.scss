@@ -15,10 +15,11 @@ $tamanioTextoPaginaGde: 20px;
 //componentes
 $boxShadow: 0px 0px 9px 10px rgba(214,187,44,0.44);
 $borderRadius : 30px;
-$margin : 15px;
-$marginmx : 25px;
+$marginMIN : 35px;
+$marginMAX : 55px;
 $padding : 20px;
-$marginLeft: 20%;
+$paddingmin: 7px;
+$escala: scale(1.15);
 
 // mixin
 @mixin flex($direction, $justify, $align){

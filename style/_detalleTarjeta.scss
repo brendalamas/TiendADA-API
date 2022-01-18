@@ -1,0 +1,50 @@
+#contenedor-detalle{
+    @include flex($direction: column, $justify:flex-start, $align:center);
+    width: 80%;
+    margin: $marginMIN;
+}
+#section-detalle{
+    background-color: $colorTextoPrincipal;
+    border-radius: $borderRadius;
+    // margin-left: $marginMAX;
+    justify-content: center;
+    padding: $padding;
+    font-family: $tipografiaPrincipal;
+    color: $fondoSecundario;
+    font-size: $tamanioTextoPaginaGde;
+}
+.detalle-producto{
+    @include flex($direction: column, $justify:center, $align:center);
+}
+.detalle-flex{
+    @include flex($direction: row, $justify:center, $align:center);
+    h2{
+        font-weight: 900;
+        text-align: center;
+    }
+    .detalle-img{
+        width: 55%;
+        margin-top: $marginMIN;
+    }
+}
+.flex-column{
+    @include flex($direction: column, $justify:center, $align:center);
+    .detalle-precio{
+        font-weight: 800;
+    }
+}
+.img-detalle-flex{
+    @include flex($direction: row, $justify:center, $align:center);
+    .img-detalle{
+        width: 5%;
+    }
+}
+.detalle-contenedor-img{
+    @include flex($direction: row, $justify:center, $align:center);
+    .detalle-otras-img{
+        width: 5%;
+    }
+    .detalle-otras-img:hover{
+        transform: $escala;
+    }
+}

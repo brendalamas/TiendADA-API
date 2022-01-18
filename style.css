@@ -5,44 +5,6 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-div,
-form,
-fieldset,
-legend,
-caption,
-label,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre {
-  font-size: 100%;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  border: 0;
-  outline: 0;
-  background: transparent;
-}
-
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  text-align: left;
-  vertical-align: top;
-}
-
 img {
   border: 0;
 }
@@ -50,51 +12,22 @@ img {
 header {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 25px;
-}
-header #imagen-icono {
-  width: 17%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  display: none;
-}
-header #imagen-icono-reemplazo {
-  width: 17%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-header div {
-  margin-left: 20%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-header div h1 {
-  color: #ffffff;
-  font-size: 300%;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 800;
-  margin: 0px;
+header img {
+  width: 55%;
 }
-header div p {
-  color: #E6A715;
-  font-size: 100%;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 700;
+header img:hover {
+  transform: scale(1.15);
 }
 
-#imagen-principal img {
+#contenedor-flex {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 55px;
+  width: 100vw;
 }
 
 #contenedor-tarjetas {
@@ -116,7 +49,8 @@ header div p {
   box-shadow: 0px 0px 9px 10px rgba(214, 187, 44, 0.44);
   border-radius: 30px;
   background-color: #ffffff;
-  margin-top: 25px;
+  margin-bottom: 35px;
+  padding: 0.5rem;
 }
 
 .tarjetas {
@@ -126,9 +60,7 @@ header div p {
   align-items: center;
   width: 95%;
   background-color: #ffffff;
-  padding: 0.5rem;
   font-family: "Josefin Sans", sans-serif;
-  margin-top: 5px;
   border: 2px #FEDD58;
 }
 
@@ -137,32 +69,20 @@ header div p {
 }
 
 .text-tarjetas {
-  margin-left: 15px;
+  margin-left: 35px;
   font-family: "Josefin Sans", sans-serif;
-}
-
-#section-detalle {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-#contenedor-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 15px;
-  width: 100%;
 }
 
 #contenedor-filtros {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 25px;
+  margin-left: 55px;
   width: 20%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  height: auto;
 }
 
 #imagen-principal {
@@ -170,31 +90,35 @@ header div p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 20%;
 }
 
 #text-filtros {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 900;
   font-size: 20px;
-  color: #ffffff;
+  color: #E6A715;
 }
 
 label {
   font-family: "Josefin Sans", sans-serif;
   color: #E6A715;
-  margin-top: 25px;
+  margin-top: 55px;
   font-size: 18px;
 }
 
 input, select {
   font-family: "Josefin Sans", sans-serif;
   color: #E6A715;
-  border: none;
+  border-color: #FEDD58;
   border-radius: 30px;
   padding: 7px;
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 35px;
+}
+
+select:hover {
+  background-color: #FEDD58;
+  border: none;
 }
 
 footer {
@@ -207,8 +131,9 @@ footer {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   bottom: 0;
-  margin-top: 15px;
+  margin-top: 35px;
   padding: 20px;
+  border-radius: 30px;
 }
 
 .icon-user {
@@ -220,7 +145,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   font-weight: 900;
   font-size: 18px;
 }
@@ -229,16 +154,23 @@ a:link {
   text-decoration: none;
 }
 
+a:hover {
+  background-color: #FEDD58;
+  border: none;
+  padding: 7px;
+  border-radius: 30px;
+}
+
 #contenedor-icons {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 
 .icons {
-  margin-left: 25px;
+  margin-left: 35px;
 }
 
 #lupa {
@@ -250,11 +182,111 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20%;
 }
 
 input {
   width: 50%;
+}
+
+#contenedor-detalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  margin: 35px;
+}
+
+#section-detalle {
+  background-color: #ffffff;
+  border-radius: 30px;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #E6A715;
+  font-size: 20px;
+}
+
+.detalle-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detalle-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.detalle-flex h2 {
+  font-weight: 900;
+  text-align: center;
+}
+.detalle-flex .detalle-img {
+  width: 55%;
+  margin-top: 35px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column .detalle-precio {
+  font-weight: 800;
+}
+
+.img-detalle-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.img-detalle-flex .img-detalle {
+  width: 5%;
+}
+
+.detalle-contenedor-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.detalle-contenedor-img .detalle-otras-img {
+  width: 5%;
+}
+.detalle-contenedor-img .detalle-otras-img:hover {
+  transform: scale(1.15);
+}
+
+button {
+  color: #E6A715;
+  border-color: #FEDD58;
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 18px;
+  background-color: #ffffff;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+button:hover {
+  background-color: #FEDD58;
+  border: none;
+}
+
+#contenedor-botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.boton-atras {
+  margin-top: 35px;
 }
 
 body {
