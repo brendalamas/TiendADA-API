@@ -83,6 +83,7 @@ const detalleTarjeta = (data)=>{
     contenedorTarjeta.style.display = "none"
     contenedorDetalle.style.display = "flex"
     sectionDetalle.style.display = "flex"
+    console.log(data);
 
     sectionDetalle.innerHTML = `
     <article class="detalle-producto">
@@ -101,8 +102,7 @@ const detalleTarjeta = (data)=>{
             
         </div>
         <div class="detalle-contenedor-img">
-            <img class="detalle-otras-img" src="${data.pictures[0].secure_url}">
-            <img class="detalle-otras-img" src="${data.pictures[1].secure_url}">
+            ${productoSinImagen(data.pictures)}
         </div>
         
 
@@ -110,6 +110,7 @@ const detalleTarjeta = (data)=>{
     </article>`
     const botonComprar = document.querySelector(".boton-comprar")
     const botonAtras = document.querySelector(".boton-atras")
+    const detalleContenedorImg = document.querySelector(".detalle-contenedor-img")
 
     botonAtras.onclick = () => {
         contenedorDetalle.style.display="none"
@@ -182,5 +183,22 @@ const mostrarImagenNotFound=()=>{
     const cerrarModal = document.querySelector(".cerrar-modal")
     cerrarModal.onclick=()=>{
         modal.style.display="none"
+    }
+}
+const productoSinImagen = (arrayImagenes)=>{
+    for (let i = 0; i < arrayImagenes.length; i++) {
+        if (arrayImagenes[0] && arrayImagenes[1] && arrayImagenes[2]) {
+            return `
+             <img class="detalle-otras-img" src="${arrayImagenes[0].secure_url}">
+             <img class="detalle-otras-img" src="${arrayImagenes[1].secure_url}"></img>
+             <img class="detalle-otras-img" src="${arrayImagenes[1].secure_url}"></img>
+             `
+        }
+        if (arrayImagenes[0] && !arrayImagenes[1] ||
+            arrayImagenes[0] && !arrayImagenes[1] && !arrayImagenes[2]) {
+            return `
+             <img class="detalle-otras-img" src="${arrayImagenes[0].secure_url}">
+             `
+        }
     }
 }
