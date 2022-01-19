@@ -83,7 +83,6 @@ const detalleTarjeta = (data)=>{
     contenedorTarjeta.style.display = "none"
     contenedorDetalle.style.display = "flex"
     sectionDetalle.style.display = "flex"
-    console.log(data);
 
     sectionDetalle.innerHTML = `
     <article class="detalle-producto">
@@ -104,10 +103,9 @@ const detalleTarjeta = (data)=>{
         <div class="detalle-contenedor-img">
             ${productoSinImagen(data.pictures)}
         </div>
-        
-
         <button class="boton-atras" id="${data.id}">Atrás</button>
     </article>`
+
     const botonComprar = document.querySelector(".boton-comprar")
     const botonAtras = document.querySelector(".boton-atras")
     const detalleContenedorImg = document.querySelector(".detalle-contenedor-img")
