@@ -1,22 +1,37 @@
-// DOM
+//busqueda
 const form = document.querySelector("#form-busqueda")
 const inputBusqueda = document.querySelector("#input-busqueda")
+
+//contenedores
 const contenedorTarjeta = document.querySelector("#contenedor-tarjetas")
 const contenedorDetalle = document.querySelector("#contenedor-detalle")
 
+//seccion
 const sectionTarjetas = document.querySelector("#section-tarjetas")
 const sectionBusqueda = document.querySelector("#section-busqueda")
 const sectionDetalle = document.querySelector("#section-detalle")
+
+//filtros
 const selectUbicacion = document.querySelector("#select-ubicacion")
 const selectEnvios = document.querySelector("#select-envios")
 const selectCondicion = document.querySelector("#select-condicion")
 
-//FETCH
-const buscarProductos = (producto,direccion, envios,condicion) =>{
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`)
+
+
+
+// variables
+let paginaActual = 1
+let ultimaPagina = 0
+
+//fetch
+const buscarProductos = (producto, direccion, envios,condicion) =>{
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&q=gifquebusxadte&offset=${paginaActual}&limit=5&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`)
     .then(res => res.json())
     .then(data =>{
-        mostrarTarjetas(data.results, direccion, envios,condicion)
+        console.log(paginaActual);
+        mostrarTarjetas(data.results,paginaActual, direccion, envios,condicion)
+        ultimaPagina = data.paging.total
+        console.log(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&q=gifquebusxadte&offset=${paginaActual}&limit=5&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`);
     })
 }
 
@@ -34,8 +49,8 @@ form.onsubmit=(e)=>{
     buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
 }
 
-// TARJETAS EN HTML
-const mostrarTarjetas = (producto, direccion, envios, condicion) =>{
+// Tarjetas en HTML
+const mostrarTarjetas = (producto, paginaActual, direccion, envios, condicion) =>{
     const lupa = document.querySelector("#lupa")
     contenedorTarjeta.style.display = "flex"
     contenedorDetalle.style.display= "none"
@@ -57,14 +72,13 @@ const mostrarTarjetas = (producto, direccion, envios, condicion) =>{
             `
         },`
         <div id="contenedor-botones">
-            <button id="prev">Pagina Anterior</button>
-            <button id="next">Pagina Siguiente</button>
+            <button id="boton-prev">Pagina Anterior</button>
+            <button id="boton-next">Pagina Siguiente</button>
         </div>`)
-    }
-
-    
+        
+    }   
     clickATarjetas()
-
+    clickPaginaSiguiente()
 }
 
 const clickATarjetas = () =>{
@@ -77,8 +91,7 @@ const clickATarjetas = () =>{
     }
 }
 
-
-////// TARJETAS EN DETALLE
+////// Tarjetas en detalle
 const detalleTarjeta = (data)=>{
     contenedorTarjeta.style.display = "none"
     contenedorDetalle.style.display = "flex"
@@ -122,7 +135,7 @@ const detalleTarjeta = (data)=>{
     }
 }
 
-// FUNCIONES
+// Funciones
 const mostrarEnvioGratis = (tipoEnvio)=>{
     if (tipoEnvio === true) {
         return `
@@ -198,5 +211,29 @@ const productoSinImagen = (arrayImagenes)=>{
              <img class="detalle-otras-img" src="${arrayImagenes[0].secure_url}">
              `
         }
+    }
+}
+
+// paginado
+const clickPaginaSiguiente =()=>{
+    //botones paginas
+    const prev = document.querySelector("#boton-prev")
+    const next = document.querySelector("#boton-next")
+
+    next.onclick = () => {
+        paginaActual++
+        if (paginaActual === ultimaPagina) {
+        next.disabled = true
+        }
+        buscarProductos()
+    }
+
+    prev.onclick = () => {
+        paginaActual--
+
+        if (paginaActual === 1) {
+            prev.disabled = true
+        }
+        buscarProductos()
     }
 }
