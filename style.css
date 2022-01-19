@@ -215,6 +215,10 @@ input {
   width: 50%;
 }
 
+#lupa {
+  background-color: #FEDD58;
+}
+
 #contenedor-detalle {
   display: flex;
   flex-direction: column;

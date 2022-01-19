@@ -11,22 +11,12 @@ const selectUbicacion = document.querySelector("#select-ubicacion")
 const selectEnvios = document.querySelector("#select-envios")
 const selectCondicion = document.querySelector("#select-condicion")
 
-
-
-// const filtrarCondicion = (data) =>{
-//     if (data.condition === "new") {
-//         console.log("es nuevo");
-//     }
-// }
-
 //FETCH
 const buscarProductos = (producto,direccion, envios,condicion) =>{
     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`)
     .then(res => res.json())
     .then(data =>{
-        console.log(data);
         mostrarTarjetas(data.results, direccion, envios,condicion)
-        console.log(condicion);
     })
 }
 
@@ -46,28 +36,33 @@ form.onsubmit=(e)=>{
 
 // TARJETAS EN HTML
 const mostrarTarjetas = (producto, direccion, envios, condicion) =>{
+    const lupa = document.querySelector("#lupa")
     contenedorTarjeta.style.display = "flex"
     contenedorDetalle.style.display= "none"
 
-    contenedorTarjeta.innerHTML= producto.reduce((acc, curr)=>{
-        return acc + `
-        <section id="section-tarjetas">
-            <div class="tarjetas" data-id="${curr.id}">
-                <img class="img-tarjeta" src="${curr.thumbnail}">
-                <div class="text-tarjetas">
-                    <h2>${curr.title}</h2>
-                    <p class="precio">$${curr.price}</p>
-                    <p>${curr.address.state_name}</p>
-
+    lupa.onclick=()=>{
+        contenedorTarjeta.innerHTML= producto.reduce((acc, curr)=>{
+            return acc + `
+            <section id="section-tarjetas">
+                <div class="tarjetas" data-id="${curr.id}">
+                    <img class="img-tarjeta" src="${curr.thumbnail}">
+                    <div class="text-tarjetas">
+                        <h2>${curr.title}</h2>
+                        <p class="precio">$${curr.price}</p>
+                        <p>${curr.address.state_name}</p>
+    
+                    </div>
                 </div>
-            </div>
-        </section>
-        `
-    },`
-    <div id="contenedor-botones">
-        <button id="prev">Pagina Anterior</button>
-        <button id="next">Pagina Siguiente</button>
-    </div>`)
+            </section>
+            `
+        },`
+        <div id="contenedor-botones">
+            <button id="prev">Pagina Anterior</button>
+            <button id="next">Pagina Siguiente</button>
+        </div>`)
+    }
+
+    
     clickATarjetas()
 
 }
@@ -89,7 +84,6 @@ const detalleTarjeta = (data)=>{
     contenedorDetalle.style.display = "flex"
     sectionDetalle.style.display = "flex"
 
-    console.log(data);
     sectionDetalle.innerHTML = `
     <article class="detalle-producto">
         <h2>${data.title}</h2>
