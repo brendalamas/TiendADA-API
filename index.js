@@ -29,9 +29,10 @@ const buscarProductos = (producto, direccion, envios,condicion) =>{
     .then(res => res.json())
     .then(data =>{
         console.log(paginaActual);
-        mostrarTarjetas(data.results,paginaActual, direccion, envios,condicion)
         ultimaPagina = data.paging.total
-        console.log(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&q=gifquebusxadte&offset=${paginaActual}&limit=5&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`);
+        console.log(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&q=gifquebusxadte&offset=${paginaActual}&limit=5&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`)
+        mostrarTarjetas(data.results, direccion, envios,condicion)
+        console.log(data);
     })
 }
 
