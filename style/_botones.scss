@@ -14,7 +14,7 @@ button:hover{
 }
 #contenedor-botones{
     @include flex($direction: row, $justify:center, $align:center);
-    margin-bottom: $espacioXG;
+    margin-bottom: $espacioL;
 }
 .boton-atras{
     margin-top: $espacioG;
@@ -25,4 +25,13 @@ button:hover{
     color: $colorTextoPrincipal;
     margin-top: $espacioG;
     padding: $espacioS;
+}
+
+// paginas p
+.totalPaginas{
+    color:$colorTextoPrincipal;
+    font-size: $tamanioTextoPaginaMed;
+    font-family: $tipografiaPrincipal;
+    margin-bottom: $espacio;
+    margin-top: $espacio;
 }

@@ -25,13 +25,12 @@ let ultimaPagina = 0
 
 //fetch
 const buscarProductos = (producto, direccion, envios,condicion) =>{
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&q=gifquebusxadte&offset=${paginaActual}&limit=5&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`)
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}&q=gifquebusxadte&offset=${paginaActual}&limit=20`)
     .then(res => res.json())
     .then(data =>{
         console.log(paginaActual);
         ultimaPagina = data.paging.total
-        console.log(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&q=gifquebusxadte&offset=${paginaActual}&limit=5&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}`)
-        mostrarTarjetas(data.results, direccion, envios,condicion)
+        mostrarTarjetas(data.results, direccion, envios,condicion, paginaActual,data)
         console.log(data);
     })
 }
@@ -51,12 +50,10 @@ form.onsubmit=(e)=>{
 }
 
 // Tarjetas en HTML
-const mostrarTarjetas = (producto, paginaActual, direccion, envios, condicion) =>{
-    const lupa = document.querySelector("#lupa")
+const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, data) =>{
     contenedorTarjeta.style.display = "flex"
     contenedorDetalle.style.display= "none"
 
-    lupa.onclick=()=>{
         contenedorTarjeta.innerHTML= producto.reduce((acc, curr)=>{
             return acc + `
             <section id="section-tarjetas">
@@ -73,11 +70,11 @@ const mostrarTarjetas = (producto, paginaActual, direccion, envios, condicion) =
             `
         },`
         <div id="contenedor-botones">
-            <button id="boton-prev">Pagina Anterior</button>
-            <button id="boton-next">Pagina Siguiente</button>
-        </div>`)
+            <button id="boton-prev">Pagina Anterior ${paginaActual--}</button>
+            <button id="boton-next">Pagina Siguiente ${paginaActual}</button>
+        </div>
+        <p class="totalPaginas">Total de paginas: ${data.paging.total / 20}</p>`)
         
-    }   
     clickATarjetas()
     clickPaginaSiguiente()
 }
@@ -226,15 +223,19 @@ const clickPaginaSiguiente =()=>{
         if (paginaActual === ultimaPagina) {
         next.disabled = true
         }
-        buscarProductos()
+        buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
     }
 
     prev.onclick = () => {
         paginaActual--
-
         if (paginaActual === 1) {
             prev.disabled = true
         }
-        buscarProductos()
+        buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
     }
 }
+
+// //total paginas
+// const totalPaginas = (pagina)=>{
+//     return pagina.total / 20 
+// }
