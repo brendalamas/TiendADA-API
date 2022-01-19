@@ -2,25 +2,34 @@
 $fondoPrincipal: #FEDD58;
 $colorTextoPrincipal: #ffffff;
 $fondoSecundario: #E6A715;
+$colorComprar:#68C82D;
 
 //tipografias
 $tipografiaPrincipal: 'Josefin Sans', sans-serif;
 
 //tamaños de texto
-$tamanioTextoPrincipal: 300%;
-$tamanioTextoSecundario: 100%;
-$tamanioTextoPagina: 18px;
-$tamanioTextoPaginaGde: 20px;
-$tamanioIcono: 65px;
+$tamanioTextoPaginoChico: 0.9em;
+$tamanioTextoPagina: 1em;
+$tamanioTextoPaginaGde: 1.5em;
+$tamanioTextoPaginaMed: 1.2em;
+$tamanioIcono: 5em;
 
 //componentes
 $boxShadow: 0px 0px 9px 10px rgba(214,187,44,0.44);
-$borderRadius : 30px;
-$marginMIN : 35px;
-$marginMAX : 55px;
-$padding : 20px;
-$paddingmin: 7px;
-$escala: scale(1.15);
+$borderRadius : 2em;
+
+$espacio:1em;
+$espacioS:0.5em;
+$espacioL:1.5em;
+$espacioM:2em;
+$espacioG:2.5em;
+$espacioXG:3em;
+$espacioXXG:4em;
+$espacioXXXG:5em;
+$espacioGDE: 40em;
+
+$escala: scale(1.3);
+$cero: 0;
 
 // mixin
 @mixin flex($direction, $justify, $align){

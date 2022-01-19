@@ -56,7 +56,7 @@ const mostrarTarjetas = (producto, direccion, envios, condicion) =>{
                 <img class="img-tarjeta" src="${curr.thumbnail}">
                 <div class="text-tarjetas">
                     <h2>${curr.title}</h2>
-                    <p>$${curr.price}</p>
+                    <p class="precio">$${curr.price}</p>
                     <p>${curr.address.state_name}</p>
 
                 </div>

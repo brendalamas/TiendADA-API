@@ -1,12 +1,9 @@
 #contenedor-filtros{
     @include flexSinAlign;
-    // margin-left: $marginMAX;
     width: 20%;
-    padding: $padding ;
+    padding: $espacioL;
     background-color: $colorTextoPrincipal;
     border-radius: $borderRadius;
-    height: auto;
-
 }
 #imagen-principal{
     @include flex($direction: column, $justify:center, $align:center);
@@ -20,8 +17,9 @@
 label{
     font-family: $tipografiaPrincipal;
     color: $fondoSecundario;
-    margin-top: $marginMAX ;
+    margin-top: $espacioG ;
     font-size: $tamanioTextoPagina;
+    font-weight: 800;
 
 }
 input, select{
@@ -29,9 +27,9 @@ input, select{
     color: $fondoSecundario;
     border-color: $fondoPrincipal;
     border-radius: $borderRadius;
-    padding: 7px;
-    font-size: $tamanioTextoPagina;
-    margin-top: $marginMIN;
+    padding: $espacioS;
+    font-size: $tamanioTextoPaginaMed;
+    margin-top: $espacioL;
 
 }
 select:hover{

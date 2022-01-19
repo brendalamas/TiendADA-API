@@ -1,0 +1,131 @@
+@media screen and (max-width: 1024px){
+    body{
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        width: 100vw;
+    }
+    #section-detalle{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 425px){
+    // filtros
+    #contenedor-flex{
+        padding:$espacioS;
+        margin:$cero;
+    }
+    #contenedor-filtros{
+        padding: $espacioS;
+    }
+    #text-filtros{
+        font-size: 0.8em;
+        text-align: center;
+        font-weight: 500;
+        margin-top: $espacioS;
+    }
+    label{
+        text-align: center;
+        font-size: 0.7em;
+        font-weight: 600;
+        margin-top: $espacioL;
+    }
+    select{
+        font-size: 0.6em;
+    }
+    #contenedor-botones{
+        margin-bottom: $espacio;
+    }
+
+    //tarjetas
+    #contenedor-tarjetas{
+        margin-left: $espacioL;
+    }
+    #section-tarjetas{
+        margin-bottom: $espacio;
+        width: 100%;
+        .tarjetas{
+            h2, .precio, p{
+                font-size: 0.8em;
+            }
+            h2{
+                margin-bottom: $espacioS;
+            }
+        }
+    }
+
+    //footer
+    footer{
+        width: 100%;
+        margin: $cero;
+    }
+
+    // detalle producto
+    .detalle-producto h2{
+        font-size: 0.8em;
+    }
+    #section-detalle{
+        padding:$espacio $espacioL;
+        width: 100%;
+    }
+    .flex-column{
+        width: 70%;
+        margin-left: $espacio;
+        p{
+            font-size: 0.7em;
+            margin-bottom: 0.4em;
+        }
+    }
+    .detalle-flex{
+        margin-top:$espacioS;
+        width: 100%;
+        .detalle-img {
+            // width: 50%;
+            margin: $cero;
+        }
+    }
+
+    //boton comprar
+    .boton-comprar{
+        margin-top: $espacio;
+        font-size: 0.8em;
+    }
+    .detalle-contenedor-img{
+        margin-top: $espacioL;
+    }
+    .boton-atras{
+        margin-top: $espacio;
+    }
+}
+
+@media screen and (max-width: 320px){
+    #text-filtros{
+        font-size: 0.6em;
+        font-weight: 400;
+    }
+    select{
+        font-size: 0.5em;
+    }
+    .tarjetas {
+        h2{
+            font-size: 0.6em;
+            font-weight: 400;
+        }
+        .precio{
+            font-weight: 500;
+        }
+    }
+    .img-tarjeta {
+        width: 30%;
+    }
+    .text-tarjetas {
+        margin-left: $espacio;
+    }
+    #contenedor-detalle{
+        margin:$espacio
+    }
+    
+}

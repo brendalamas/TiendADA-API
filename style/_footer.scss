@@ -4,21 +4,22 @@ footer{
     color: $fondoSecundario;
     font-family: $tipografiaPrincipal;
     font-size: $tamanioTextoPagina;
-    bottom: 0; 
-    margin-top: $marginMIN;
-    padding: $padding;
+    bottom: $cero; 
+    margin: $espacioXG;
+    padding: $espacioL;
     border-radius: $borderRadius;
+    width: 90%;
 }
 .icon-user{
     color: $fondoSecundario;
 }
 #contactame{
+    @include flex($direction: column, $justify:center, $align:center);
     h3{
         @include flex($direction: column, $justify:center, $align:center);
-        margin-bottom: $marginMIN;
+        margin-bottom: $espacioM;
         font-weight: 900;
-        font-size: $tamanioTextoPagina;
-
+        font-size: $tamanioTextoPaginaGde;
     }
 }
 a:link{
@@ -27,13 +28,13 @@ a:link{
 a:hover{
     background-color: $fondoPrincipal;
     border: none;
-    padding: $paddingmin;
+    padding: $espacioS;
     border-radius: $borderRadius;
 }
 #contenedor-icons{
     @include flex($direction: row, $justify:center, $align:center);
-    margin-bottom: $marginMIN;
+    margin-bottom: $espacioXG;
 }
 .icons{
-    margin-left: $marginMIN;
+    margin-left: $espacioXG;
 }

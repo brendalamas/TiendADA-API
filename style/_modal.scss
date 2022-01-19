@@ -5,20 +5,21 @@
     background-color:#111111bd;
     color: $colorTextoPrincipal;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: $cero;
+    left: $cero;
+    right: $cero;
+    bottom: $cero;
 
     .fa-exclamation-triangle{
         color: $fondoPrincipal;
         font-size: $tamanioIcono;
-        margin-bottom: $marginMIN;
+        margin-bottom: $espacioS;
     }
     p{
-        margin-bottom: $marginMIN;
+        margin-bottom: $espacioXG;
         text-align: center;
         color: $fondoSecundario;
+        font-size: $tamanioTextoPaginaMed;
     }
     
     display: none;
@@ -30,5 +31,5 @@
     max-width: 600px;
     background-color: white;
     border-radius: $borderRadius;
-    padding: $padding;
+    padding: $espacioL;
 }

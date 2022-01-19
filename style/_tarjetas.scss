@@ -1,6 +1,6 @@
 #contenedor-tarjetas{
     @include flex($direction: column, $justify:center, $align:center);
-    width: 100%;
+    width: 70%;
     display: none;
 }
 #section-tarjetas{
@@ -10,8 +10,8 @@
     box-shadow: $boxShadow;
     border-radius: $borderRadius;
     background-color:$colorTextoPrincipal ;
-    margin-bottom: $marginMIN;
-    padding: 0.5rem;
+    margin-bottom: $espacioXG;
+    padding: $espacioS;
 }
 
 .tarjetas{
@@ -20,12 +20,23 @@
     background-color:$colorTextoPrincipal;
     font-family: $tipografiaPrincipal;
     border: 2px $fondoPrincipal;
+    color: $fondoSecundario;
+    font-size: $tamanioTextoPaginaMed;
+    h2{
+        margin-bottom: $espacio;
+        font-size: $tamanioTextoPaginaGde;
+    }
+    .precio{
+        font-weight: 800;
+        font-size: $tamanioTextoPaginaGde;
+        margin-bottom: $espacioS;
+    }
 }
 .img-tarjeta{
     width: 15%;
 }
 .text-tarjetas{
-    margin-left: $marginMIN ;
+    margin-left: $espacioXG ;
     font-family: $tipografiaPrincipal;
 }
 
