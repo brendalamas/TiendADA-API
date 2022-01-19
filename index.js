@@ -109,7 +109,6 @@ const detalleTarjeta = (data)=>{
         <div class="detalle-contenedor-img">
             <img class="detalle-otras-img" src="${data.pictures[0].secure_url}">
             <img class="detalle-otras-img" src="${data.pictures[1].secure_url}">
-            <img class="detalle-otras-img" src="${data.pictures[2].secure_url}">
         </div>
         
 
