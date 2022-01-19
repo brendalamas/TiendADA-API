@@ -9,13 +9,14 @@
 @import "detalleTarjeta";
 @import "botones";
 @import "modal";
-
+@import "responsive";
 
 
 
 body{
     background-color: $fondoPrincipal;
-    width: 100%;
+    width: 100vw;
+    font-size: 12px;
 }
 
 

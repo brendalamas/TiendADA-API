@@ -1,28 +1,28 @@
 button{
     color: $fondoSecundario;
-    border: 0;
+    border: $cero;
     border-color: $fondoPrincipal;
     border-radius: $borderRadius;
-    padding: $paddingmin;
+    padding: $espacioS;
     font-size: $tamanioTextoPagina;
     background-color: $colorTextoPrincipal;
     font-family: $tipografiaPrincipal;
 }
 button:hover{
     background-color: $fondoPrincipal;
-    border: 0;
+    border: $cero;
 }
 #contenedor-botones{
     @include flex($direction: row, $justify:center, $align:center);
-    margin-bottom: $marginMIN;
+    margin-bottom: $espacioXG;
 }
 .boton-atras{
-    margin-top: $marginMIN;
+    margin-top: $espacioG;
 }
 .boton-comprar{
-    background-color: green;
+    background-color:$colorComprar;
     font-size: $tamanioTextoPagina;
     color: $colorTextoPrincipal;
-    margin-top: $marginMIN;
-    padding: $paddingmin;
+    margin-top: $espacioG;
+    padding: $espacioS;
 }

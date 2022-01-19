@@ -1,11 +1,15 @@
-#lupa{
-    width: 1.3em;
-    margin-left: 15px;
+#section-busqueda{
+    @include flex($direction: row, $justify:center, $align:center);
 }
 #form-busqueda{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex($direction: row, $justify:center, $align:center);
+    width: 100vw;
+    .fa-search{
+        color: $fondoSecundario;
+        font-size: $tamanioTextoPaginaGde;
+        margin-left: $espacioS;
+        margin-top: $espacioXG;
+    }
 }
 input{
     width: 50%;

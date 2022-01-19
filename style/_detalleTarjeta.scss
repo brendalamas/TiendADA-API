@@ -1,17 +1,17 @@
 #contenedor-detalle{
     @include flex($direction: column, $justify:flex-start, $align:center);
     width: 80%;
-    margin: $marginMIN;
+    margin: $espacioXG;
 }
 #section-detalle{
     background-color: $colorTextoPrincipal;
     border-radius: $borderRadius;
-    width: 700px;
-    justify-content: center;
-    padding: $marginMIN;
+    width: $espacioGDE;
+    // justify-content: center;
+    padding: $espacioXG;
     font-family: $tipografiaPrincipal;
     color: $fondoSecundario;
-    font-size: $tamanioTextoPaginaGde;
+    font-size: $tamanioTextoPaginaMed;
     display: none;
 }
 .detalle-producto{
@@ -23,16 +23,17 @@
 }
 .detalle-flex{
     @include flex($direction: row, $justify:space-between, $align:center);
-    margin-top: $padding;
+    margin-top: $espacioL;
     .detalle-img{
         width: 30%;
     }
 }
 .flex-column{
     @include flexSinAlign;
-    margin-left: $marginMIN;
+    margin-left: $espacioXG;
     p{
-        margin-bottom: $paddingmin;
+        margin-bottom: $espacioS;
+        font-size: $tamanioTextoPaginaMed;
     }
     .detalle-precio{
         font-weight: 800;
@@ -44,9 +45,9 @@
 }
 .detalle-contenedor-img{
     @include flex($direction: row, $justify:center, $align:center);
-    margin-top: $marginMIN;
+    margin-top: $espacioXG;
     .detalle-otras-img{
-        width: 5%;
+        width: 10%;
     }
     .detalle-otras-img:hover{
         transform: $escala;
