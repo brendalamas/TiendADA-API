@@ -71,7 +71,7 @@ const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, d
         },`
         <div id="contenedor-botones">
             <button id="boton-prev">Pagina Anterior ${paginaActual--}</button>
-            <button id="boton-next">Pagina Siguiente ${paginaActual}</button>
+            <button id="boton-next">Pagina Siguiente ${paginaActual++}</button>
         </div>
         <p class="totalPaginas">Total de paginas: ${data.paging.total / 20}</p>`)
         
@@ -234,8 +234,3 @@ const clickPaginaSiguiente =()=>{
         buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
     }
 }
-
-// //total paginas
-// const totalPaginas = (pagina)=>{
-//     return pagina.total / 20 
-// }
