@@ -10,13 +10,19 @@
 @import "botones";
 @import "modal";
 @import "responsive";
+@import "modoOscuro";
+@import "slider";
+@import "contenedorPagos";
 
-
-
+html{
+    width: 100%;
+}
 body{
+
     background-color: $fondoPrincipal;
-    width: 100vw;
+    width: 100%;
     font-size: 12px;
 }
+
 
 

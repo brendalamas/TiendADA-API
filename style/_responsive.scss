@@ -1,6 +1,11 @@
+//resposive
+
 @media screen and (max-width: 1024px){
     body{
         width: 100vw;
+    }
+    #contenedor-detalle{
+        margin:$espacioL;
     }
 }
 
@@ -13,6 +18,23 @@
     }
 }
 @media screen and (max-width: 425px){
+    //header
+    header{
+        h1{
+            font-size: $tamanioTextoPaginaGde;
+        }
+        p{
+            font-size: $tamanioTextoPaginoXChico;
+        }
+    }
+    #contenedor-pagos{
+        width: 100%;
+        padding: $espacioS;
+        div{
+            font-size: $tamanioTextoPaginoXChico;
+            padding: $espacioS;
+        }
+    }
     // filtros
     #contenedor-flex{
         padding:$espacioS;
@@ -24,7 +46,7 @@
     #text-filtros{
         font-size: 0.8em;
         text-align: center;
-        font-weight: 500;
+        font-weight: 400;
         margin-top: $espacioS;
     }
     label{
@@ -61,6 +83,9 @@
     footer{
         width: 100%;
         margin: $cero;
+        font-size: 0.8em;
+        text-align: center;
+        font-weight: 500;
     }
 
     // detalle producto
@@ -99,9 +124,25 @@
     .boton-atras{
         margin-top: $espacio;
     }
+    #section-detalle .detalle-producto .flex-column {
+        p {
+            font-size: $tamanioTextoPaginoXChico;
+        }
+        .detalle-precio{
+            font-size: $tamanioTextoPagina;
+        }
+
+    }
+    
 }
 
 @media screen and (max-width: 320px){
+    //header
+    header{
+        h1{
+            font-size: $tamanioTextoPagina;
+        }
+    }
     #text-filtros{
         font-size: 0.6em;
         font-weight: 400;

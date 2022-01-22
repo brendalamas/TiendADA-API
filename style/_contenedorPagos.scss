@@ -1,0 +1,16 @@
+#contenedor-pagos{
+    @include flex($direction: row, $justify:center, $align:center);
+    background-color: $colorTextoPrincipal;
+    border-radius: $borderRadius;
+    font-family: $tipografiaPrincipal;
+    color: $fondoSecundario;
+    width: 100%;
+    font-size: $tamanioTextoPaginaGde;
+    margin-top: $espacioL;
+    div{
+        padding: $espacio;
+        border: 1px solid $fondoSecundario;
+        border-radius: $borderRadius;
+        margin: $espacioS;
+    }
+}
