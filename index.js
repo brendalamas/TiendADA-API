@@ -78,7 +78,7 @@ const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, d
         },`
         <div id="contenedor-botones">
             <button id="boton-prev" aria-label="boton anterior">Pagina Anterior ${paginaActual--}</button>
-            <button id="boton-next" aria-label="boton siguiente">Pagina Siguiente ${paginaActual++}</button>
+            <button id="boton-next" aria-label="boton siguiente">Pagina Siguiente ${paginaActual+2}</button>
         </div>
         <p class="total-paginas">Total de paginas: ${data.paging.total / 20}</p>`)
         
