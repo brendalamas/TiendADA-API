@@ -6,7 +6,7 @@ const inputBusqueda = document.querySelector("#input-busqueda")
 const contenedorTarjeta = document.querySelector("#contenedor-tarjetas")
 const contenedorDetalle = document.querySelector("#contenedor-detalle")
 const contenedorFiltros = document.querySelector("#contenedor-filtros")
-const contenedorCarga = document.querySelector("contenedor-carga")
+const contenedorPagos = document.querySelector("#contenedor-pagos")
 
 //seccion
 const sectionTarjetas = document.querySelector("#section-tarjetas")
@@ -57,7 +57,9 @@ const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, d
     contenedorTarjeta.style.display = "flex"
     contenedorFiltros.style.display= "flex"
     contenedorDetalle.style.display= "none"
+    contenedorPagos.style.display="none"
     slider.style.display="none"
+
 
         contenedorTarjeta.innerHTML= producto.reduce((acc, curr)=>{
             return acc + `
