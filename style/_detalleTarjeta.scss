@@ -1,5 +1,5 @@
 #contenedor-detalle{
-    @include flex($direction: column, $justify:flex-start, $align:center);
+    @include flex($direction: column, $justify:center, $align:center);
     width: 80%;
     margin: $espacioXG;
 }
@@ -7,49 +7,64 @@
     background-color: $colorTextoPrincipal;
     border-radius: $borderRadius;
     width: $espacioGDE;
-    // justify-content: center;
     padding: $espacioXG;
     font-family: $tipografiaPrincipal;
     color: $fondoSecundario;
     font-size: $tamanioTextoPaginaMed;
     display: none;
-}
-.detalle-producto{
-    @include flexSinAlign;
-    h2{
-        font-weight: 900;
-        text-align: center;
+    .detalle-producto{
+        @include flexSinAlign;
+        h2{
+            font-weight: 900;
+            text-align: center;
+        }
+        .flex-column{
+            @include flexSinAlign;
+            margin-left: $espacioXG;
+            .detalle-img{
+                @include flex($direction: column, $justify:center, $align:center);
+                img{
+                    width: 30%;
+                }
+            }
+            p{
+                margin-bottom: $espacioS;
+                font-size: $tamanioTextoPaginaMed;
+                text-align: center;
+            }
+            .detalle-precio{
+                font-weight: 800;
+                margin-top: $espacio;
+                font-size: $tamanioTextoPaginaXGde;
+            }
+            .vendedor{
+                color: $colorVendedor;
+            }
+            .img-detalle-flex{
+                @include flex($direction: row, $justify:center, $align:center);
+                .fa-truck{
+                    padding-bottom: 7px;
+                    margin-right: 5px;
+                }
+                .envio-gratis, .fa-truck{
+                    color: $colorComprar;
+                }
+                .envio-no-gratis{
+                    color: red;
+                }
+            }
+        }
+        .detalle-contenedor-img{
+            @include flex($direction: row, $justify:center, $align:center);
+            margin-top: $espacioXG;
+            .detalle-otras-img{
+                width: 10%;
+            }
+            .detalle-otras-img:hover{
+                transform: $escala;
+            }
+        }
     }
-}
-.detalle-flex{
-    @include flex($direction: row, $justify:space-between, $align:center);
-    margin-top: $espacioL;
-    .detalle-img{
-        width: 30%;
-    }
-}
-.flex-column{
-    @include flexSinAlign;
-    margin-left: $espacioXG;
-    p{
-        margin-bottom: $espacioS;
-        font-size: $tamanioTextoPaginaMed;
-    }
-    .detalle-precio{
-        font-weight: 800;
-    }
-}
-.img-detalle-flex{
-    @include flex($direction: row, $justify:flex-start, $align:center);
     
 }
-.detalle-contenedor-img{
-    @include flex($direction: row, $justify:center, $align:center);
-    margin-top: $espacioXG;
-    .detalle-otras-img{
-        width: 10%;
-    }
-    .detalle-otras-img:hover{
-        transform: $escala;
-    }
-}
+

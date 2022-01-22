@@ -5,6 +5,8 @@ const inputBusqueda = document.querySelector("#input-busqueda")
 //contenedores
 const contenedorTarjeta = document.querySelector("#contenedor-tarjetas")
 const contenedorDetalle = document.querySelector("#contenedor-detalle")
+const contenedorFiltros = document.querySelector("#contenedor-filtros")
+const contenedorCarga = document.querySelector("contenedor-carga")
 
 //seccion
 const sectionTarjetas = document.querySelector("#section-tarjetas")
@@ -16,7 +18,7 @@ const selectUbicacion = document.querySelector("#select-ubicacion")
 const selectEnvios = document.querySelector("#select-envios")
 const selectCondicion = document.querySelector("#select-condicion")
 
-
+const slider = document.querySelector("#slider")
 
 
 // variables
@@ -37,9 +39,12 @@ const verProducto = (id)=>{
     fetch(`https://api.mercadolibre.com/items/${id}`)
     .then(res => res.json())
     .then(data=>{
-        detalleTarjeta(data)
+        fetch (`https://api.mercadolibre.com/items/${id}/description`)
+        .then (res => res.json ())
+        .then (descripcion => {
+            detalleTarjeta(data, descripcion)
+        })
     })
-
 }
 
 form.onsubmit=(e)=>{
@@ -50,7 +55,9 @@ form.onsubmit=(e)=>{
 // Tarjetas en HTML
 const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, data) =>{
     contenedorTarjeta.style.display = "flex"
+    contenedorFiltros.style.display= "flex"
     contenedorDetalle.style.display= "none"
+    slider.style.display="none"
 
         contenedorTarjeta.innerHTML= producto.reduce((acc, curr)=>{
             return acc + `
@@ -103,26 +110,26 @@ selectCondicion.onchange = ()=>{
 
 
 // Tarjetas en detalle
-const detalleTarjeta = (data)=>{
+const detalleTarjeta = (data, descripcion)=>{
     contenedorTarjeta.style.display = "none"
     contenedorDetalle.style.display = "flex"
-    sectionDetalle.style.display = "flex"
+    sectionDetalle.style.display = "flex"        
+    
 
     sectionDetalle.innerHTML = `
     <article class="detalle-producto">
         <h2>${data.title}</h2>
-        <div class="detalle-flex">
-            <img class="detalle-img" src="${data.thumbnail}">
-            <div class="flex-column">
-                <p>${mostrarCondicion(data.condition)}</p> 
-                <p class="detalle-precio">$${data.base_price}</p>
-                <p>Vendido por ${data.domain_id}</p>
-                <p>Cantidad: ${mostrarStock(data.initial_quantity, data.sold_quantity)}</p>
-                <p>${mostrarEnvioGratis(data.shipping.free_shipping)}</p>
-                <p>${data.warranty}</p>
-                <button class="boton-comprar">COMPRAR</button>
+        <div class="flex-column">
+            <p>${mostrarCondicion(data.condition)}</p> 
+            <div class="detalle-img">
+                <img class="detalle-img" src="${data.thumbnail}">
             </div>
-            
+            <p class="detalle-precio">$${data.base_price}</p>
+            <p>Vendido por <span class="vendedor">${data.domain_id}</span> | ${mostrarStock(data.initial_quantity, data.sold_quantity)}</p>
+            <p>${mostrarEnvioGratis(data.shipping.free_shipping)}</p>
+            <p>${descripcion.plain_text}</p>
+            <p>${data.warranty}</p>
+            <button class="boton-comprar">COMPRAR</button>
         </div>
         <div class="detalle-contenedor-img">
             ${productoSinImagen(data.pictures)}
@@ -132,7 +139,6 @@ const detalleTarjeta = (data)=>{
 
     const botonComprar = document.querySelector(".boton-comprar")
     const botonAtras = document.querySelector(".boton-atras")
-    const detalleContenedorImg = document.querySelector(".detalle-contenedor-img")
 
     botonAtras.onclick = () => {
         contenedorDetalle.style.display="none"
@@ -152,15 +158,14 @@ const mostrarEnvioGratis = (tipoEnvio)=>{
         return `
         <div class="img-detalle-flex">
             <i class="fas fa-truck"></i>
-            <p class='envio-gratis'> Envio FULL</p>
+            <p class='envio-gratis'> Envio GRATIS</p>
         </div>
         
         `
     }else{
         return `
         <div class="img-detalle-flex">
-            <i class="fas fa-truck"></i>
-            <p class='envio-gratis'> Envio a cargo del comprador</p>
+            <p class='envio-no-gratis'> Envio a cargo del comprador</p>
         </div>
         ` 
     }
@@ -169,14 +174,10 @@ const mostrarEnvioGratis = (tipoEnvio)=>{
 const mostrarCondicion = (tipoCondicion)=>{
     if (tipoCondicion === "new") {
         return `
-        <p>Este producto es nuevo! 
-            <span><i class="far fa-smile-beam"></i></span>
-        </p>`
+        <p>Producto Nuevo<span><i class="far fa-smile-beam"></i></span></p>`
     }else{
         return `
-        <p>Este producto es usado 
-            <span><i class="fas fa-recycle"></i></span>
-        </p>`
+        <p>Producto Usado <span><i class="fas fa-recycle"></i></span></p>`
     }
 }
 const mostrarStock = (stockInicial, stockFinal)=>{

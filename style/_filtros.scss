@@ -4,6 +4,7 @@
     padding: $espacioL;
     background-color: $colorTextoPrincipal;
     border-radius: $borderRadius;
+    display: none;
 }
 #imagen-principal{
     @include flex($direction: column, $justify:center, $align:center);

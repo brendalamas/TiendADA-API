@@ -1,6 +1,11 @@
+//resposive
+
 @media screen and (max-width: 1024px){
     body{
         width: 100vw;
+    }
+    #contenedor-detalle{
+        margin:$espacioL;
     }
 }
 
@@ -111,6 +116,16 @@
     .boton-atras{
         margin-top: $espacio;
     }
+    #section-detalle .detalle-producto .flex-column {
+        p {
+            font-size: $tamanioTextoPaginoXChico;
+        }
+        .detalle-precio{
+            font-size: $tamanioTextoPagina;
+        }
+
+    }
+    
 }
 
 @media screen and (max-width: 320px){

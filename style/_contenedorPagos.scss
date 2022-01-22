@@ -1,0 +1,6 @@
+#contenedor-pagos{
+    @include flex($direction: row, $justify:center, $align:center);
+    background-color: $colorTextoPrincipal;
+    border-radius: $borderRadius;
+
+}
