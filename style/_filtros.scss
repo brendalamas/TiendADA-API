@@ -30,7 +30,7 @@ input, select{
     padding: $espacioS;
     font-size: $tamanioTextoPaginaMed;
     margin-top: $espacioL;
-
+    border: $cero;
 }
 select:hover{
     background-color: $fondoPrincipal;

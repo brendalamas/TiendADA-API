@@ -1,0 +1,25 @@
+.modo-oscuro {
+    background-color: black;
+    input, #contenedor-filtros, #section-tarjetas, #section-detalle,.modal-container, footer{
+        border: 2px solid $fondoSecundario;
+    }
+    #section-tarjetas, .tarjetas, #contenedor-filtros, #section-detalle, .modal-container, footer{
+        background-color: black;
+    }
+    #section-tarjetas, #section-detalle{
+        box-shadow: $boxShadowOscuro;
+    }
+    button{
+        background-color: black;
+        border: 1px solid $fondoSecundario;
+        color:$fondoSecundario ;
+    }
+    select{
+        background-color: black;
+        border: 1px solid $fondoSecundario;
+
+    }
+    .total-paginas{
+        color: $fondoSecundario;
+    }
+}

@@ -10,9 +10,13 @@
 @import "botones";
 @import "modal";
 @import "responsive";
+@import "modoOscuro";
 
 
 
+html{
+    width: 100vw;
+}
 body{
     background-color: $fondoPrincipal;
     width: 100vw;

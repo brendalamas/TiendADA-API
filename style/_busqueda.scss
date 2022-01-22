@@ -1,19 +1,19 @@
 #section-busqueda{
     @include flex($direction: row, $justify:center, $align:center);
-}
-#form-busqueda{
-    @include flex($direction: row, $justify:center, $align:center);
-    width: 100vw;
-    .fa-search{
-        color: $fondoSecundario;
-        font-size: $tamanioTextoPaginaGde;
-        margin-left: $espacioS;
-        margin-top: $espacioXG;
+    margin-bottom: $espacioG;
+    #form-busqueda{
+        @include flex($direction: row, $justify:center, $align:center);
+        width: 100vw;
+        input{
+            width: 50%;
+            margin: $cero;
+        }
     }
+    #modo{
+        width: $espacioXXG;
+        margin-left: $espacioL;
+    }
+    
 }
-input{
-    width: 50%;
-}
-#lupa{
-    background-color: $fondoPrincipal;
-}
+
+

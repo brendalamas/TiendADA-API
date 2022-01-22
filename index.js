@@ -71,9 +71,9 @@ const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, d
         },`
         <div id="contenedor-botones">
             <button id="boton-prev">Pagina Anterior ${paginaActual--}</button>
-            <button id="boton-next">Pagina Siguiente ${paginaActual}</button>
+            <button id="boton-next">Pagina Siguiente ${paginaActual++}</button>
         </div>
-        <p class="totalPaginas">Total de paginas: ${data.paging.total / 20}</p>`)
+        <p class="total-paginas">Total de paginas: ${data.paging.total / 20}</p>`)
         
     clickATarjetas()
     clickPaginaSiguiente()
@@ -235,7 +235,16 @@ const clickPaginaSiguiente =()=>{
     }
 }
 
-// //total paginas
-// const totalPaginas = (pagina)=>{
-//     return pagina.total / 20 
-// }
+// modo oscuro
+const modo = document.querySelector("#modo");
+
+modo.onclick=()=>{
+    const body = document.querySelector("body")
+    const input = document.querySelector("input")
+
+
+    body.classList.toggle("modo-oscuro");
+    input.classList.toggle("modo-oscuro");
+
+
+}

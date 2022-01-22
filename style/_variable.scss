@@ -3,19 +3,24 @@ $fondoPrincipal: #FEDD58;
 $colorTextoPrincipal: #ffffff;
 $fondoSecundario: #E6A715;
 $colorComprar:#68C82D;
+// colores modoOscuro
+
 
 //tipografias
 $tipografiaPrincipal: 'Josefin Sans', sans-serif;
 
 //tamaños de texto
+$tamanioTextoPaginoXChico: 0.5em;
 $tamanioTextoPaginoChico: 0.9em;
 $tamanioTextoPagina: 1em;
-$tamanioTextoPaginaGde: 1.5em;
 $tamanioTextoPaginaMed: 1.2em;
+$tamanioTextoPaginaGde: 1.5em;
+$tamanioTextoPaginaXGde: 2.5em;
 $tamanioIcono: 5em;
 
 //componentes
 $boxShadow: 0px 0px 9px 10px rgba(214,187,44,0.44);
+$boxShadowOscuro: 0px 0px 5px 4px rgba(214,187,44,0.44);
 $borderRadius : 2em;
 
 $espacio:1em;

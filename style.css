@@ -11,13 +11,22 @@ img {
 
 header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  color: #ffffff;
+  font-size: 2.5em;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+  padding: 2em;
 }
-header img {
-  width: 50%;
+header .fa-shopping-cart:hover {
+  transform: rotate(-20deg);
+}
+header p {
+  color: #E6A715;
+  font-weight: 500;
+  font-size: 0.9em;
 }
 
 #contenedor-flex {
@@ -124,6 +133,7 @@ input, select {
   padding: 0.5em;
   font-size: 1.2em;
   margin-top: 1.5em;
+  border: 0;
 }
 
 select:hover {
@@ -195,28 +205,22 @@ a:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2.5em;
 }
-
-#form-busqueda {
+#section-busqueda #form-busqueda {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100vw;
 }
-#form-busqueda .fa-search {
-  color: #E6A715;
-  font-size: 1.5em;
-  margin-left: 0.5em;
-  margin-top: 3em;
-}
-
-input {
+#section-busqueda #form-busqueda input {
   width: 50%;
+  margin: 0;
 }
-
-#lupa {
-  background-color: #FEDD58;
+#section-busqueda #modo {
+  width: 4em;
+  margin-left: 1.5em;
 }
 
 #contenedor-detalle {
@@ -318,6 +322,9 @@ button:hover {
   align-items: center;
   margin-bottom: 1.5em;
 }
+#contenedor-botones button {
+  margin-right: 1em;
+}
 
 .boton-atras {
   margin-top: 2.5em;
@@ -331,7 +338,7 @@ button:hover {
   padding: 0.5em;
 }
 
-.totalPaginas {
+.total-paginas {
   color: #ffffff;
   font-size: 1.2em;
   font-family: "Josefin Sans", sans-serif;
@@ -394,6 +401,13 @@ button:hover {
   }
 }
 @media screen and (max-width: 425px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+  header p {
+    font-size: 0.5em;
+  }
+
   #contenedor-flex {
     padding: 0.5em;
     margin: 0;
@@ -406,7 +420,7 @@ button:hover {
   #text-filtros {
     font-size: 0.8em;
     text-align: center;
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 0.5em;
   }
 
@@ -443,6 +457,9 @@ button:hover {
   footer {
     width: 100%;
     margin: 0;
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: 500;
   }
 
   .detalle-producto h2 {
@@ -485,6 +502,10 @@ button:hover {
   }
 }
 @media screen and (max-width: 320px) {
+  header h1 {
+    font-size: 1em;
+  }
+
   #text-filtros {
     font-size: 0.6em;
     font-weight: 400;
@@ -514,6 +535,35 @@ button:hover {
     margin: 1em;
   }
 }
+.modo-oscuro {
+  background-color: black;
+}
+.modo-oscuro input, .modo-oscuro #contenedor-filtros, .modo-oscuro #section-tarjetas, .modo-oscuro #section-detalle, .modo-oscuro .modal-container, .modo-oscuro footer {
+  border: 2px solid #E6A715;
+}
+.modo-oscuro #section-tarjetas, .modo-oscuro .tarjetas, .modo-oscuro #contenedor-filtros, .modo-oscuro #section-detalle, .modo-oscuro .modal-container, .modo-oscuro footer {
+  background-color: black;
+}
+.modo-oscuro #section-tarjetas, .modo-oscuro #section-detalle {
+  box-shadow: 0px 0px 5px 4px rgba(214, 187, 44, 0.44);
+}
+.modo-oscuro button {
+  background-color: black;
+  border: 1px solid #E6A715;
+  color: #E6A715;
+}
+.modo-oscuro select {
+  background-color: black;
+  border: 1px solid #E6A715;
+}
+.modo-oscuro .total-paginas {
+  color: #E6A715;
+}
+
+html {
+  width: 100vw;
+}
+
 body {
   background-color: #FEDD58;
   width: 100vw;
