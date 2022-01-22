@@ -27,6 +27,14 @@
             font-size: $tamanioTextoPaginoXChico;
         }
     }
+    #contenedor-pagos{
+        width: 100%;
+        padding: $espacioS;
+        div{
+            font-size: $tamanioTextoPaginoXChico;
+            padding: $espacioS;
+        }
+    }
     // filtros
     #contenedor-flex{
         padding:$espacioS;

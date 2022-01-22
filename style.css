@@ -414,11 +414,6 @@ button:hover {
   #section-detalle {
     width: 80%;
   }
-
-  #contenedor-pagos {
-    font-size: 0.9em;
-    background-color: red;
-  }
 }
 @media screen and (max-width: 425px) {
   header h1 {
@@ -426,6 +421,15 @@ button:hover {
   }
   header p {
     font-size: 0.5em;
+  }
+
+  #contenedor-pagos {
+    width: 100%;
+    padding: 0.5em;
+  }
+  #contenedor-pagos div {
+    font-size: 0.5em;
+    padding: 0.5em;
   }
 
   #contenedor-flex {

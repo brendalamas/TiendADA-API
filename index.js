@@ -75,8 +75,8 @@ const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, d
             `
         },`
         <div id="contenedor-botones">
-            <button id="boton-prev">Pagina Anterior ${paginaActual--}</button>
-            <button id="boton-next">Pagina Siguiente ${paginaActual++}</button>
+            <button id="boton-prev" aria-label="boton anterior">Pagina Anterior ${paginaActual--}</button>
+            <button id="boton-next" aria-label="boton siguiente">Pagina Siguiente ${paginaActual++}</button>
         </div>
         <p class="total-paginas">Total de paginas: ${data.paging.total / 20}</p>`)
         
@@ -129,12 +129,12 @@ const detalleTarjeta = (data, descripcion)=>{
             <p>${mostrarEnvioGratis(data.shipping.free_shipping)}</p>
             <p>${descripcion.plain_text}</p>
             <p>${data.warranty}</p>
-            <button class="boton-comprar">COMPRAR</button>
+            <button class="boton-comprar" aria-label="boton comprar">COMPRAR</button>
         </div>
         <div class="detalle-contenedor-img">
             ${productoSinImagen(data.pictures)}
         </div>
-        <button class="boton-atras" id="${data.id}">Atrás</button>
+        <button class="boton-atras" aria-label="boton atras" id="${data.id}">Atrás</button>
     </article>`
 
     const botonComprar = document.querySelector(".boton-comprar")
@@ -199,7 +199,7 @@ const mostrarImagenNotFound=()=>{
                 <a href="https://www.mercadolibre.com/" target="blanck">link</a>
             </span>
         </p>
-        <button class="cerrar-modal">Cerrar</button>
+        <button class="cerrar-modal" aria-label="cerrar modal">Cerrar</button>
     </div>
     
     `
