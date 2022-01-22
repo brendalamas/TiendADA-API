@@ -28,10 +28,8 @@ const buscarProductos = (producto, direccion, envios,condicion) =>{
     fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${producto}&state=${direccion}&shipping=${envios}&ITEM_CONDITION=${condicion}&q=gifquebusxadte&offset=${paginaActual}&limit=20`)
     .then(res => res.json())
     .then(data =>{
-        console.log(paginaActual);
         ultimaPagina = data.paging.total
         mostrarTarjetas(data.results, direccion, envios,condicion, paginaActual,data)
-        console.log(data);
     })
 }
 
@@ -79,6 +77,7 @@ const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, d
     clickPaginaSiguiente()
 }
 
+
 const clickATarjetas = () =>{
     const tarjetas = document.querySelectorAll(".tarjetas")
     for (let i = 0; i < tarjetas.length; i++) {
@@ -88,8 +87,22 @@ const clickATarjetas = () =>{
         }  
     }
 }
+// aplicando filtros
+selectUbicacion.onchange = ()=>{
+    buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
+    mostrarTarjetas()
+}
+selectEnvios.onchange = ()=>{
+    buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
+    mostrarTarjetas()
+}
+selectCondicion.onchange = ()=>{
+    buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
+    mostrarTarjetas()
+}
 
-////// Tarjetas en detalle
+
+// Tarjetas en detalle
 const detalleTarjeta = (data)=>{
     contenedorTarjeta.style.display = "none"
     contenedorDetalle.style.display = "flex"
