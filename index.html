@@ -12,21 +12,52 @@
 </head>
 <body>
     <!-- header -->
-    <header>
-        <img src="./imagenes/TiendADA-portada.jpg" alt="">  
+    <header>        
+        <h1> <span><i class="fas fa-shopping-cart"></i></span> TiendADA</h1>
+        <p>Proyecto utilizando la API de mercado libre</p>
     </header>
 
     <!-- seccion busqueda -->
     <section id="section-busqueda">
+        <button id="modo">
+            <span><i class="fas fa-sun"></i></span>
+            <span><i class="fas fa-moon"></i></span>
+        </button>
         <form id="form-busqueda"> 
             <input type="text" id="input-busqueda" placeholder=" Buscar productos">
-            <i class="fas fa-search"></i>
         </form>
     </section>
-    
+    <!-- slider animacion -->
+    <div id="slider">
+        <ul>
+            <li><img src="https://http2.mlstatic.com/D_NQ_935561-MLA48831545527_012022-OO.webp" alt="imagen publicidad"></li>
+            <li><img src="https://http2.mlstatic.com/D_NQ_648496-MLA48872894001_012022-OO.webp" alt="imagen publicidad"></li>
+            <li><img src="https://http2.mlstatic.com/D_NQ_808996-MLA48821822883_012022-OO.webp" alt="imagen publicidad"></li>
+            <li><img src="https://http2.mlstatic.com/D_NQ_779283-MLA48859314272_012022-OO.webp" alt="imagen publicidad"></li>
+        </ul>
+    </div>
+    <!-- contenedor metodos de pago -->
+    <div id="contenedor-pagos">
+        <div>
+            <h3> <span><i class="far fa-credit-card"></i></span> Tarjeta de crédito</h3>
+            <p>Ver promociones bancarias</p>
+        </div>
+        <div>
+            <h3> <span><i class="fas fa-credit-card"></i></span> Tarjeta de débito</h3>
+            <p>Ver más</p>
+        </div>
+        <div>
+            <h3> <span><i class="far fa-handshake"></i></span> Cuotas sin tarjeta</h3>
+            <p>Conocé Mercado Crédito</p>
+        </div>
+        <div>
+            <h3> <span><i class="fas fa-money-bill-wave"></i></span> Efectivo</h3>
+            <p>Ver más</p>
+        </div>
+    </div>
     <!-- seccion principal -->
     <div id="contenedor-flex">
-        <!-- CONTENEDOR FILTROS -->
+        <!-- contenedor filtros -->
         <div id="contenedor-filtros">
             <h2 id="text-filtros">Selecciona los filtros de acuerdo a tu busqueda!</h2>
             <label>UBICACIÓN</label>
@@ -60,12 +91,11 @@
             </select>
             
         </div>
-        <!-- <img id="precarga" src="./Magnify-1s-200px.svg" alt="">-->
 
-        <!-- CONTENEDOR TARJETAS -->
+        <!-- contenedor tarjetas -->
         <div id="contenedor-tarjetas"></div>
         
-        <!-- CONTENEDOR DETALLE -->
+        <!-- contenedor tarjetas en detalle -->
         <div id="contenedor-detalle">
             <section id="section-detalle"></section>
         </div>
