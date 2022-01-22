@@ -581,6 +581,10 @@ button:hover {
 .modo-oscuro .total-paginas {
   color: #E6A715;
 }
+.modo-oscuro #contenedor-pagos {
+  background-color: black;
+  border: 1px solid #E6A715;
+}
 
 #slider {
   width: 100vw;
@@ -636,6 +640,17 @@ button:hover {
   align-items: center;
   background-color: #ffffff;
   border-radius: 2em;
+  font-family: "Josefin Sans", sans-serif;
+  color: #E6A715;
+  width: 100%;
+  font-size: 1.5em;
+  margin-top: 1.5em;
+}
+#contenedor-pagos div {
+  padding: 1em;
+  border: 1px solid #E6A715;
+  border-radius: 2em;
+  margin: 0.5em;
 }
 
 html {
@@ -644,7 +659,7 @@ html {
 
 body {
   background-color: #FEDD58;
-  width: 100vw;
+  width: 100%;
   font-size: 12px;
 }
 
