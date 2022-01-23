@@ -1,0 +1,30 @@
+#modal-tarjeta{
+    @include flex($direction: column, $justify:center, $align:center);
+    font-family: $tipografiaPrincipal;
+    font-size: $tamanioTextoPagina;
+
+    background-color:#fdfdfc96;
+    color: $colorTextoPrincipal;
+
+    position: fixed;
+    top: $cero;
+    left: $cero;
+    right: $cero;
+    bottom: $cero;
+    .modal-tarjeta-pago{
+        @include flex($direction: column, $justify:center, $align:center);
+        background-color: $colorTextoPrincipal;
+        border-radius: $borderRadius;
+        border: 2px solid $fondoSecundario;
+        padding: $espacio;
+        color: $fondoSecundario;
+        font-family: $tipografiaPrincipal;
+        font-size: $tamanioTextoPaginaGde;
+        div{
+            @include flex($direction: column, $justify:center, $align:flex-start);
+            margin-top: $espacioS;
+            margin-bottom: $espacioS;
+        }
+    }
+    display: none;
+}

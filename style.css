@@ -594,6 +594,12 @@ button:hover {
   background-color: black;
   border: 1px solid #E6A715;
 }
+.modo-oscuro #modal-tarjeta {
+  background-color: #111111bd;
+}
+.modo-oscuro #modal-tarjeta .modal-tarjeta-pago {
+  background-color: black;
+}
 
 #slider {
   display: flex;
@@ -625,6 +631,44 @@ button:hover {
   border: 1px solid #E6A715;
   border-radius: 2em;
   margin: 0.5em;
+}
+
+#modal-tarjeta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1em;
+  background-color: #fdfdfc96;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+#modal-tarjeta .modal-tarjeta-pago {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 2em;
+  border: 2px solid #E6A715;
+  padding: 1em;
+  color: #E6A715;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5em;
+}
+#modal-tarjeta .modal-tarjeta-pago div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 html {

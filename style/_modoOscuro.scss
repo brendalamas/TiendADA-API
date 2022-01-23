@@ -25,7 +25,11 @@
     #contenedor-pagos{
         background-color: black;
         border: 1px solid $fondoSecundario;
-
-
+    }
+    #modal-tarjeta{
+        background-color:#111111bd;
+    }
+    #modal-tarjeta .modal-tarjeta-pago{
+        background-color: black;
     }
 }

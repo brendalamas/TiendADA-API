@@ -253,14 +253,56 @@ const clickPaginaSiguiente =()=>{
 
 // modo oscuro
 const modo = document.querySelector("#modo");
-
 modo.onclick=()=>{
     const body = document.querySelector("body")
     const input = document.querySelector("input")
-
-
     body.classList.toggle("modo-oscuro");
     input.classList.toggle("modo-oscuro");
+}
 
 
+// modal metodos de pago
+const tarjetaCredito = document.querySelectorAll(".tarjeta-credito")
+
+for (let i = 0; i < tarjetaCredito.length; i++) {
+    tarjetaCredito[i].onclick = ()=>{
+        const modalTarjeta = document.querySelector("#modal-tarjeta")
+        modalTarjeta.style.display="flex"
+        mostrarModalMetodoPago()
+    }
+}
+
+const mostrarModalMetodoPago=()=>{
+    const modalTarjeta = document.querySelector("#modal-tarjeta")
+
+    modalTarjeta.innerHTML= `
+    <div class="modal-tarjeta-pago">
+        <h3> Medios de pago </h3>
+        <div>
+            <p>Tarjetas de crédito</p>
+            <ul>
+                <li>Ahora 30, 24, 18 y 12</li>
+                <li>Hasta 6 y 3 cuotas sin interés</li>
+            </ul>
+            <p>Tarjetas de débito</p>
+            <ul>
+                <li>MAESTRO</li>
+                <li>MASTERCARD</li>
+                <li>CABAL</li>
+                <li>VISA</li>
+            </ul>
+            <p>Efectivo</p>
+            <ul>
+                <li>RAPI PAGO</li>
+                <li>PAGO FACIL</li>
+                <li>Dinero disponible en tu cuenta de Mercado Pago</li>
+            </ul>
+        </div>
+        <button class="cerrar-modal" aria-label="cerrar modal">Atrás</button>
+    </div>
+    `
+    const cerrarModal = document.querySelector(".cerrar-modal")
+    cerrarModal.onclick=()=>{
+        modalTarjeta.style.display="none"
+    }
 }
