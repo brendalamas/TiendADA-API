@@ -9,7 +9,7 @@
 <p>Podes encontrar toda la documentación en el siguiente enlace</p>
 <a href="https://developers.mercadolibre.com.ar/es_ar/api-docs-es">API document</a>
 
-<a href="https://brendalamas.github.io/TiendADA-API/">¡Accede a la tienda!</a>
+<a href="https://tienda-bl.netlify.app/">¡Accede a la tienda!</a>
 
 
 ### Tecnologias utilizadas:
