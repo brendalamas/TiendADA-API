@@ -60,6 +60,7 @@ header p {
   background-color: #ffffff;
   margin-bottom: 3em;
   padding: 0.5em;
+  cursor: pointer;
 }
 
 .tarjetas {
@@ -142,6 +143,10 @@ select:hover {
   border: none;
 }
 
+select {
+  cursor: pointer;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -222,6 +227,7 @@ a:hover {
 #section-busqueda #modo {
   width: 4em;
   margin-left: 1.5em;
+  cursor: pointer;
 }
 
 #contenedor-detalle {
@@ -319,6 +325,7 @@ button {
   font-size: 1em;
   background-color: #ffffff;
   font-family: "Josefin Sans", sans-serif;
+  cursor: pointer;
 }
 
 button:hover {
@@ -335,6 +342,7 @@ button:hover {
 }
 #contenedor-botones button {
   margin-right: 1em;
+  cursor: pointer;
 }
 
 .boton-atras {
@@ -631,6 +639,7 @@ button:hover {
   border: 1px solid #E6A715;
   border-radius: 2em;
   margin: 0.5em;
+  cursor: pointer;
 }
 
 #modal-tarjeta {

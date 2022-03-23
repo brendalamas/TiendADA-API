@@ -37,3 +37,6 @@ select:hover{
     background-color: $fondoPrincipal;
     border: none;
 }
+select{
+    cursor: pointer;
+}
