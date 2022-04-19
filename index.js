@@ -9,6 +9,7 @@ const contenedorFiltros = document.querySelector("#contenedor-filtros")
 const contenedorPagos = document.querySelector("#contenedor-pagos")
 
 //seccion
+// esta variable y la siguiente nunca se usan 
 const sectionTarjetas = document.querySelector("#section-tarjetas")
 const sectionBusqueda = document.querySelector("#section-busqueda")
 const sectionDetalle = document.querySelector("#section-detalle")
@@ -39,6 +40,7 @@ const verProducto = (id)=>{
     fetch(`https://api.mercadolibre.com/items/${id}`)
     .then(res => res.json())
     .then(data=>{
+        // excelente 
         fetch (`https://api.mercadolibre.com/items/${id}/description`)
         .then (res => res.json ())
         .then (descripcion => {
@@ -53,6 +55,7 @@ form.onsubmit=(e)=>{
 }
 
 // Tarjetas en HTML
+// si no usas direccion, envios, o condicion, no deberias darselos a la funcion
 const mostrarTarjetas = (producto, direccion, envios, condicion, paginaActual, data) =>{
     contenedorTarjeta.style.display = "flex"
     contenedorFiltros.style.display= "flex"
@@ -97,6 +100,7 @@ const clickATarjetas = () =>{
     }
 }
 // aplicando filtros
+// excelente 
 selectUbicacion.onchange = ()=>{
     buscarProductos(inputBusqueda.value, selectUbicacion.value, selectEnvios.value, selectCondicion.value)
     mostrarTarjetas()
@@ -156,6 +160,8 @@ const detalleTarjeta = (data, descripcion)=>{
 
 // Funciones
 const mostrarEnvioGratis = (tipoEnvio)=>{
+    // mejor decir asi
+    // if (tipoEnvio) {
     if (tipoEnvio === true) {
         return `
         <div class="img-detalle-flex">
@@ -252,6 +258,7 @@ const clickPaginaSiguiente =()=>{
 }
 
 // modo oscuro
+// todos los selectores deben ir arriba 
 const modo = document.querySelector("#modo");
 modo.onclick=()=>{
     const body = document.querySelector("body")
